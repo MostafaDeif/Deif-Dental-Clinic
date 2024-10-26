@@ -1,0 +1,16 @@
+.landing {
+    width: 100%;
+    height: calc(100vh - 62px); /* حجز مساحة باقي الشاشة */
+    padding-top: 62px; /* أو يمكنك استخدام margin-top */
+    background-color: red;
+    background-image: url(https://img.freepik.com/premium-photo/handsome-male-model-man-smiling-with-perfectly-clean-teeth-stock-photo-dental-background_592138-1163.jpg?w=1380);
+    background-size: cover;
+    background-position: 60% center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+    p{
+        width: 60%;
+    }
+}
