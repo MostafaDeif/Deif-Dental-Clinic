@@ -8,15 +8,17 @@ header {
   background-color: rgb(35, 41, 165); /* Navy Blue */
   color: white;
   height: 62px;
-  position: sticky;
-  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 60px;
-  // remove the padding in responsive
-
+  
+  /* إزالة الحواف في الشاشة الصغيرة */
+  @media (max-width: 768px) {
+    // padding: 0;
+  }
 }
+
 
 .logo {
   display: flex;

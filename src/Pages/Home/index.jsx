@@ -5,12 +5,12 @@ import "./index.scss"
 export default function Home() {
   return (
     <div className="col-12 d-flex flex-column">
-      <div>
+      <div className="navcomp">
         <Navbar />
       </div>
-      {/* <div>
+      <div>
         <Landing />
-      </div> */}
+      </div>
     </div>
   )
 }

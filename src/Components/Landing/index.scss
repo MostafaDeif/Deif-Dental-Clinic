@@ -6,13 +6,17 @@
     width: 100%;
     main {
         width: 1297px;
-        @media (max-width: 767px) {
-            width: 100%;
+        @media (min-width: 100px) and (max-width: 767px) {
+            width: 90%;
+            display: flex;
             flex-wrap: wrap;
+            justify-content: center;
         }
         @media (min-width: 768px) and (max-width: 1024px) {
-            width: 100%;
+            width: 90%;
+            display: flex;
             flex-wrap: wrap;
+            height: auto;
         }
         height: 780px;
         display: flex;
@@ -21,15 +25,18 @@
         .left {
             display: flex;
             flex-direction: column;
-            gap: 60px;
-
-            @media (max-width: 767px) {
+            // gap: 60px;
+            height: 420px;
+            // justify-content: space-between;
+            @media (min-width: 100px) and  (max-width: 767px) {
               width: 100%;
+              display: flex;
               flex-wrap: wrap;
               justify-content: center;
           }
           @media (min-width: 768px) and (max-width: 1024px) {
               width: 100%;
+              display: flex;
               flex-wrap: wrap;
               justify-content: center;
           }
@@ -39,14 +46,17 @@
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
-                @media (max-width: 767px) {
+                @media (min-width: 100px) and  (max-width: 767px) {
                   width: 100%;
                   flex-wrap: wrap;
+                  display: flex;
+
                   justify-content: center;
                   align-items: center;
               }
               @media (min-width: 768px) and (max-width: 1024px) {
                   width: 100%;
+                  display: flex;
                   flex-wrap: wrap;
                   justify-content: center;
                   align-items: center;
@@ -56,7 +66,7 @@
                     height: 24px;
                     color: #FF9140;
                     font-style: bold;
-                    font-size: 19px;
+                    font-size: 1.1875rem;
                     text-align: left;
                     // font-family: 'Plus Jakarta Sans';
                     font-weight: 700;
@@ -64,7 +74,7 @@
                     letter-spacing: 0.15em;
                     text-align: left;
                     text-transform: uppercase;
-                    @media (max-width: 767px) {
+                    @media (min-width: 100px) and (max-width: 767px) {
                       width: 90%;
                       text-align: left;
                   }
@@ -75,8 +85,8 @@
                   }
                 }
                 h1 {
-                    width: 649px;
-                    @media (max-width: 767px) {
+                    width: 600px;
+                    @media (min-width: 100px) and (max-width: 767px) {
                       width: 90%;
                       text-align: left;
                   }
@@ -87,7 +97,7 @@
                   }
                     height: 168px;
                     font-family: 'Source Serif Pro';
-                    font-size: 3.375rem;
+                    font-size: 4rem;
                     font-weight: 600;
                     line-height: 62.6px;
                     letter-spacing: -0.04em;
@@ -118,9 +128,10 @@
             .bottom {
                 width: 182px;
                 height: 40px;
-                @media (max-width: 767px) {
+                @media (min-width: 100px) and (max-width: 767px) {
                   width: 90%;
                   display: flex;
+                  flex-wrap: wrap;
                   justify-content: center;
                   margin-bottom: 80px;
               }
@@ -128,7 +139,7 @@
                   width: 90%;
                   display: flex;
                   justify-content: center;
-                  margin-bottom: 20px;
+                  margin-bottom: 30px;
               }
                 button {
                     display: flex;
@@ -166,14 +177,14 @@
 .circle-container {
     position: relative;
     width: 500px;
-    height: 500px; // جعل الحاوية 500 بكسل
-    @media (max-width: 767px) {
+    height: 500px; 
+    @media (min-width: 100px) and (max-width: 767px) {
       width: 320px;
       height: 320px;
   }
   @media (min-width: 768px) and (max-width: 1024px) {
-    width: 320px;
-    height: 320px;
+    width: 520px;
+    height: 520px;
     // edit tablate size
   }
     .circle {
@@ -338,3 +349,57 @@ body {
 //     font-size: 16px !important;
 //   }
 // }
+@media (max-width: 767px) {
+  #landingpage {
+      main {
+          width: 90%;
+          height: auto; 
+          gap: 80px;
+
+          .left {
+              width: 100%;
+              .top {
+                  width: 100%;
+                  h3, h1, .p2 {
+                      width: 90%;
+                  }
+              }
+              .bottom {
+                  width: 90%;
+                  margin-bottom: 80px;
+              }
+          }
+      }
+  }
+
+  .circle-container {
+      width: 320px;
+      height: 320px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #landingpage {
+      main {
+          width: 90%;
+          .left {
+              width: 100%;
+              .top {
+                  width: 100%;
+                  h3, h1, .p2 {
+                      width: 90%;
+                  }
+              }
+              .bottom {
+                  width: 90%;
+                  margin-bottom: 30px;
+              }
+          }
+      }
+  }
+
+  .circle-container {
+      width: 520px;
+      height: 520px;
+  }
+}

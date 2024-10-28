@@ -15,19 +15,7 @@ export default function Landing() {
                         <button>CONTACT US</button>
                     </div>
                 </div>
-                {/* <div className="right">
-                    <div className="c1">
-                        <div  className="c2">
-                            <div className="c3">
-                                <div  className="c4">
-                                    <div  className="c5">
-                                        <img src={test} alt="me" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
+
                 <div className="circle-container">
                     <div className="circle">
                         <div className="inner-circle">
