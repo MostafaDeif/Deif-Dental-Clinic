@@ -8,9 +8,9 @@ export default function Home() {
       <div>
         <Navbar />
       </div>
-      <div>
+      {/* <div>
         <Landing />
-      </div>
+      </div> */}
     </div>
   )
 }

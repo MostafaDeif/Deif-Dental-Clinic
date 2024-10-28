@@ -1,6 +1,5 @@
 #landingpage {
     width: 100%;
-    height: calc(100vh - 62px);
     background-color: #EFF6FF;
     display: flex;
     justify-content: center;
@@ -23,27 +22,69 @@
             display: flex;
             flex-direction: column;
             gap: 60px;
+
+            @media (max-width: 767px) {
+              width: 100%;
+              flex-wrap: wrap;
+              justify-content: center;
+          }
+          @media (min-width: 768px) and (max-width: 1024px) {
+              width: 100%;
+              flex-wrap: wrap;
+              justify-content: center;
+          }
             .top {
                 width: 649px;
                 height: 343.97px;
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
-                .p1 {
+                @media (max-width: 767px) {
+                  width: 100%;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  align-items: center;
+              }
+              @media (min-width: 768px) and (max-width: 1024px) {
+                  width: 100%;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  align-items: center;
+              }
+                h3 {
                     width: 340px;
                     height: 24px;
                     color: #FF9140;
                     font-style: bold;
                     font-size: 19px;
+                    text-align: left;
                     // font-family: 'Plus Jakarta Sans';
                     font-weight: 700;
                     line-height: 23.94px;
                     letter-spacing: 0.15em;
                     text-align: left;
                     text-transform: uppercase;
+                    @media (max-width: 767px) {
+                      width: 90%;
+                      text-align: left;
+                  }
+                  @media (min-width: 768px) and (max-width: 1024px) {
+                      width: 90%;
+                      text-align: left;
+                     
+                  }
                 }
                 h1 {
                     width: 649px;
+                    @media (max-width: 767px) {
+                      width: 90%;
+                      text-align: left;
+                  }
+                  @media (min-width: 768px) and (max-width: 1024px) {
+                      width: 90%;
+                      text-align: left;
+                     
+                  }
                     height: 168px;
                     font-family: 'Source Serif Pro';
                     font-size: 3.375rem;
@@ -77,6 +118,18 @@
             .bottom {
                 width: 182px;
                 height: 40px;
+                @media (max-width: 767px) {
+                  width: 90%;
+                  display: flex;
+                  justify-content: center;
+                  margin-bottom: 80px;
+              }
+              @media (min-width: 768px) and (max-width: 1024px) {
+                  width: 90%;
+                  display: flex;
+                  justify-content: center;
+                  margin-bottom: 20px;
+              }
                 button {
                     display: flex;
                     width: 182px;
@@ -114,7 +167,15 @@
     position: relative;
     width: 500px;
     height: 500px; // جعل الحاوية 500 بكسل
-  
+    @media (max-width: 767px) {
+      width: 320px;
+      height: 320px;
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 320px;
+    height: 320px;
+    // edit tablate size
+  }
     .circle {
       position: absolute;
       width: 100%;
@@ -229,6 +290,7 @@ body {
   html {
     font-size: 12px !important;
   }
+
 }
 
 @media screen and (min-width: 991px) {

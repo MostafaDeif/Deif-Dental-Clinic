@@ -7,7 +7,7 @@ export default function Landing() {
             <main>
                 <div className="left">
                     <div className="top">
-                        <p className="p1">WELCOME TO Deif Dental Clinic</p>
+                        <h3>WELCOME TO Deif Dental Clinic</h3>
                         <h1>For a <span>brighter</span>, whiter<span> smile</span>, discover the perfect care solution today!</h1>
                         {/* <p className="p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud.</p> */}
                     </div>
