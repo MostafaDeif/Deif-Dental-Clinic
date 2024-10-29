@@ -1,3 +1,4 @@
+import About from "../../Components/AboutUs"
 import Landing from "../../Components/Landing"
 import Navbar from "../../Components/Navbar"
 import "./index.scss"
@@ -10,6 +11,9 @@ export default function Home() {
       </div>
       <div>
         <Landing />
+      </div>
+      <div>
+        <About />
       </div>
     </div>
   )
