@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./Pages/home";
-// import Navbar from "./Components/Navbar";
+import Home from "./Pages/Home";
+import ScrollToTop from "./Components/ScrollToTop";
+
 
 
 
@@ -9,7 +10,7 @@ export default function App() {
     <div className="col-12 App d-flex">
 
       <BrowserRouter>
-    
+        <ScrollToTop />
         <Routes>
           <Route path="/">
             <Route index element={<Home />} />

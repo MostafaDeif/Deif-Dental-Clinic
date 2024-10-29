@@ -1,49 +1,52 @@
-.bigContainer{
+.bigContainer {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;/*edit responsive to auto*/
+    height: 100vh;
+    /*edit responsive to auto*/
 
 }
 
 
-.aboutUs{
+.aboutUs {
     display: flex;
     width: 1200px;
     max-width: 100%;
 
 }
 
-.containerImage{
+.containerImage {
     width: 500px;
     max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    .image{
+
+    .image {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 390px;
         max-width: 80%;
-        img{
+
+        img {
             width: 325px;
             object-fit: cover;
             border-radius: 22px;
-        }   
+        }
     }
 }
 
 
-.aboutText{
+.aboutText {
     width: 600px;
     display: flex;
     flex-direction: column;
-    gap: 20px;   
-    max-width: 90%; 
-    
-    h3{
+    gap: 20px;
+    // max-width: 90%; 
+
+    h3 {
         // font-family: Plus Jakarta Sans;
         text-transform: uppercase;
         font-size: 1.1875rem;
@@ -52,35 +55,39 @@
 
     }
 
-    h2{
+    h2 {
         text-transform: capitalize;
         font-size: 2.875rem;
         color: #142349;
         font-weight: 600;
-        span{
+
+        span {
             color: #3366FF;
         }
     }
 
-    p{
+    p {
         color: #142349;
         font-size: 1.1875rem;
 
     }
 
-    button{
-        color: #142349;
+    .readMore {
+        color: #5C85FF;
         width: 147px;
+        font-size: 1.375rem;
+        text-decoration: none;
     }
 }
 
-.advantages{
+.advantages {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    h5{
+
+    h5 {
         width: 47%;
-        
+
     }
 }
 
@@ -96,58 +103,63 @@
 //     //     flex-wrap: wrap;
 //     // }
 //   }
-  
-  @media screen and (max-width: 767px) {
+
+@media screen and (max-width: 767px) {
+
     /* font at sm */
     html {
-      font-size: 12px !important;
+        font-size: 12px !important;
     }
-    .bigContainer{
+
+    .bigContainer {
         margin-top: 80px;
     }
 
-    
-    .aboutUs{
+
+    .aboutUs {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         gap: 32px;
     }
-    .containerImage{
+
+    .containerImage {
         width: 100%;
+        order: 2;
     }
 
-   .containerImage{
-    order: 2;
-
-   }
-    .aboutText{
+    .aboutText {
         order: 1;
         width: 80%;
         justify-content: center;
     }
+}
 
-  }
-  
-  @media screen and (max-width: 991px) {
+
+
+@media screen and (max-width: 991px) {
+
     /* font at md */
     html {
-      font-size: 14px !important;
+        font-size: 14px !important;
     }
 
-    .aboutText{
+    .aboutText {
         width: 90%;
-        h3 , h2 , p{
+
+        h3,
+        h2,
+        p {
             width: 95%;
         }
     }
-  }
-  
-  @media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1200px) {
+
     /* font at lg */
     html {
-      font-size: 16px !important;
+        font-size: 16px !important;
     }
-  }
-  
+}

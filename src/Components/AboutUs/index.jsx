@@ -1,6 +1,7 @@
 import test from '../../assets/test.jpg'
 import "./index.scss"
 import check from "../../assets/check.png"
+import { Link } from 'react-router-dom'
 
 export default function About() {
   return (
@@ -21,7 +22,7 @@ export default function About() {
             <h5><img src={check} width={20} alt="check" /> Online Appointment</h5>
             <h5><img src={check} width={20} alt="check" /> Always Monitored</h5>
           </div>
-          <a>Read more</a>
+          <Link to="about_us" className='readMore'>Read more</Link>
         </div>
       </div>
     </div>
