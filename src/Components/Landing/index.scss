@@ -1,231 +1,4 @@
-#landingpage {
-    width: 100%;
-    background-color: #EFF6FF;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    main {
-        width: 1297px;
-        @media (min-width: 100px) and (max-width: 767px) {
-            width: 90%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        @media (min-width: 768px) and (max-width: 1024px) {
-            width: 90%;
-            display: flex;
-            flex-wrap: wrap;
-            height: auto;
-        }
-        height: 780px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .left {
-            display: flex;
-            flex-direction: column;
-            // gap: 60px;
-            height: 420px;
-            // justify-content: space-between;
-            @media (min-width: 100px) and  (max-width: 767px) {
-              width: 100%;
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: center;
-          }
-          @media (min-width: 768px) and (max-width: 1024px) {
-              width: 100%;
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: center;
-          }
-            .top {
-                width: 649px;
-                height: 343.97px;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                @media (min-width: 100px) and  (max-width: 767px) {
-                  width: 100%;
-                  flex-wrap: wrap;
-                  display: flex;
-
-                  justify-content: center;
-                  align-items: center;
-              }
-              @media (min-width: 768px) and (max-width: 1024px) {
-                  width: 100%;
-                  display: flex;
-                  flex-wrap: wrap;
-                  justify-content: center;
-                  align-items: center;
-              }
-                h3 {
-                    width: 340px;
-                    height: 24px;
-                    color: #FF9140;
-                    font-style: bold;
-                    font-size: 1.1875rem;
-                    text-align: left;
-                    // font-family: 'Plus Jakarta Sans';
-                    font-weight: 700;
-                    line-height: 23.94px;
-                    letter-spacing: 0.15em;
-                    text-align: left;
-                    text-transform: uppercase;
-                    @media (min-width: 100px) and (max-width: 767px) {
-                      width: 90%;
-                      text-align: left;
-                  }
-                  @media (min-width: 768px) and (max-width: 1024px) {
-                      width: 90%;
-                      text-align: left;
-                     
-                  }
-                }
-                h1 {
-                    width: 600px;
-                    @media (min-width: 100px) and (max-width: 767px) {
-                      width: 90%;
-                      text-align: left;
-                  }
-                  @media (min-width: 768px) and (max-width: 1024px) {
-                      width: 90%;
-                      text-align: left;
-                     
-                  }
-                    height: 168px;
-                    font-family: 'Source Serif Pro';
-                    font-size: 4rem;
-                    font-weight: 600;
-                    line-height: 62.6px;
-                    letter-spacing: -0.04em;
-                    text-align: left;
-                    color: #142349;
-                    span {
-                        color: #3366FF;
-                        font-family: 'Source Serif Pro';
-                        font-family: 'Source Serif Pro';
-                        font-size: 3.375rem;
-                        font-weight: 600;
-                        line-height: 62.6px;
-                        letter-spacing: -0.04em;
-                        text-align: left;
-                    }
-                }
-                .p2 {
-                    width: 535px;
-                    height: 90px;
-                    // font-family: 'DM Sans';
-                    font-size: 1.1875rem;
-                    font-weight: 300;
-                    line-height: 30px;
-                    text-align: left;
-                    color: #142349;
-                }
-            }
-            .bottom {
-                width: 182px;
-                height: 40px;
-                @media (min-width: 100px) and (max-width: 767px) {
-                  width: 90%;
-                  display: flex;
-                  flex-wrap: wrap;
-                  justify-content: center;
-                  margin-bottom: 80px;
-              }
-              @media (min-width: 768px) and (max-width: 1024px) {
-                  width: 90%;
-                  display: flex;
-                  justify-content: center;
-                  margin-bottom: 30px;
-              }
-                button {
-                    display: flex;
-                    width: 182px;
-                    height: 40px;
-                    box-shadow: 1px 10px 12.7px 0px rgba(49, 119, 225, 0.2392156863);
-                    padding: 16px 28px;
-                    background: #3366FF;
-                    border: solid 1px #3366FF;
-                    border-radius: 192px;
-                    -webkit-border-radius: 192px;
-                    -moz-border-radius: 192px;
-                    -ms-border-radius: 192px;
-                    -o-border-radius: 192px;
-                    align-items: center;
-                    justify-content: center;
-                    // font-family: 'Plus Jakarta Sans';
-                    font-size: 15px;
-                    font-weight: 600;
-                    line-height: 18.9px;
-                    letter-spacing: 0.15em;
-                    text-align: left;
-                    color: #FFFFFF;
-                    &:hover {
-                        background-color: transparent;
-                        color: #3366FF;
-                    }
-                }
-            }
-        }
-    }
-}
-///////////////////
-
-.circle-container {
-    position: relative;
-    width: 500px;
-    height: 500px; 
-    @media (min-width: 100px) and (max-width: 767px) {
-      width: 320px;
-      height: 320px;
-  }
-  @media (min-width: 768px) and (max-width: 1024px) {
-    width: 520px;
-    height: 520px;
-    // edit tablate size
-  }
-    .circle {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background-color: #3c76ff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      animation: pulse 4s infinite ease-in-out;
-  
-      .inner-circle {
-        width: 85%; // الدائرة الداخلية كنسبة من الخارجية
-        height: 85%;
-        border-radius: 50%;
-        background-color: #5a94ff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-  
-        .profile-img {
-          width: 80%; // الصورة كنسبة من الدائرة الداخلية
-          height: 80%;
-          border-radius: 50%;
-          object-fit: cover;
-        }
-      }
-    }
-  }
-  
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
-  }
-  /////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
 // @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 // @import url("https://fonts.googleapis.com/css2?family=Gantari:wght@100;200;300;400;500;600;800;900&display=swap");
 // @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&display=swap");
@@ -248,6 +21,271 @@
   font-family: "Nunito Sans", sans-serif;
   position: relative;
 }
+
+
+
+
+#landingpage {
+  width: 100%;
+  background-color: #EFF6FF;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  main {
+    width: 1297px;
+
+    @media (min-width: 100px) and (max-width: 767px) {
+      width: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      width: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      height: auto;
+    }
+
+    height: 780px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      // gap: 60px;
+      height: 420px;
+
+      // justify-content: space-between;
+      @media (min-width: 100px) and (max-width: 767px) {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      @media (min-width: 768px) and (max-width: 1024px) {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .top {
+        width: 649px;
+        height: 343.97px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @media (min-width: 100px) and (max-width: 767px) {
+          width: 100%;
+          flex-wrap: wrap;
+          display: flex;
+
+          justify-content: center;
+          align-items: center;
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+        }
+
+        h3 {
+          width: 100%;
+          height: 24px;
+          color: #FF9140;
+          font-style: bold;
+          font-size: 1.1875rem;
+          text-align: left;
+          // font-family: 'Plus Jakarta Sans';
+          font-weight: 700;
+          line-height: 23.94px;
+          letter-spacing: 0.15em;
+          text-align: left;
+          text-transform: uppercase;
+
+          @media (min-width: 100px) and (max-width: 767px) {
+            width: 90%;
+            text-align: left;
+          }
+
+          @media (min-width: 768px) and (max-width: 1024px) {
+            width: 90%;
+            text-align: left;
+
+          }
+        }
+
+        h1 {
+          width: 600px;
+
+          @media (min-width: 100px) and (max-width: 767px) {
+            width: 90%;
+            text-align: left;
+          }
+
+          @media (min-width: 768px) and (max-width: 1024px) {
+            width: 90%;
+            text-align: left;
+
+          }
+
+          height: 168px;
+          font-family: 'Source Serif Pro';
+          font-size: 4rem;
+          font-weight: 600;
+          line-height: 62.6px;
+          letter-spacing: -0.04em;
+          text-align: left;
+          color: #142349;
+
+          span {
+            color: #3366FF;
+            font-family: 'Source Serif Pro';
+            font-family: 'Source Serif Pro';
+            font-size: 3.375rem;
+            font-weight: 600;
+            line-height: 62.6px;
+            letter-spacing: -0.04em;
+            text-align: left;
+          }
+        }
+
+        .p2 {
+          width: 535px;
+          height: 90px;
+          // font-family: 'DM Sans';
+          font-size: 1.1875rem;
+          font-weight: 300;
+          line-height: 30px;
+          text-align: left;
+          color: #142349;
+        }
+      }
+
+      .bottom {
+        width: 182px;
+        height: 40px;
+
+        @media (min-width: 100px) and (max-width: 767px) {
+          width: 90%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-bottom: 80px;
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+          width: 90%;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 30px;
+        }
+
+        .buttonCONTACT {
+          display: flex;
+          width: 182px;
+          height: 40px;
+          text-decoration: none;
+          box-shadow: 1px 10px 12.7px 0px rgba(49, 119, 225, 0.2392156863);
+          padding: 16px 28px;
+          background: #3366FF;
+          border: solid 1px #3366FF;
+          border-radius: 192px;
+          -webkit-border-radius: 192px;
+          -moz-border-radius: 192px;
+          -ms-border-radius: 192px;
+          -o-border-radius: 192px;
+          align-items: center;
+          justify-content: center;
+          // font-family: 'Plus Jakarta Sans';
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 18.9px;
+          letter-spacing: 0.15em;
+          text-align: left;
+          color: #FFFFFF;
+
+          &:hover {
+            background-color: transparent;
+            color: #3366FF;
+          }
+        }
+      }
+    }
+  }
+}
+
+///////////////////
+
+.circle-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+
+  @media (min-width: 100px) and (max-width: 767px) {
+    width: 320px;
+    height: 320px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 520px;
+    height: 520px;
+    // edit tablate size
+  }
+
+  .circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #3c76ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulse 4s infinite ease-in-out;
+
+    .inner-circle {
+      width: 85%; // الدائرة الداخلية كنسبة من الخارجية
+      height: 85%;
+      border-radius: 50%;
+      background-color: #5a94ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .profile-img {
+        width: 80%; // الصورة كنسبة من الدائرة الداخلية
+        height: 80%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+////////////////////////////////
 
 html {
   scroll-behavior: smooth;
@@ -273,6 +311,7 @@ body {
   align-items: flex-start;
   align-content: flex-start;
   justify-content: flex-start;
+
   #root,
   .App {
     min-height: 100vh;
@@ -290,6 +329,7 @@ body {
 }
 
 @media screen and (min-width: 100px) {
+
   /* font at xs */
   html {
     font-size: 10px !important;
@@ -297,6 +337,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+
   /* font at sm */
   html {
     font-size: 12px !important;
@@ -305,6 +346,7 @@ body {
 }
 
 @media screen and (min-width: 991px) {
+
   /* font at md */
   html {
     font-size: 14px !important;
@@ -312,6 +354,7 @@ body {
 }
 
 @media screen and (min-width: 1200px) {
+
   /* font at lg */
   html {
     font-size: 16px !important;
@@ -351,55 +394,66 @@ body {
 // }
 @media (max-width: 767px) {
   #landingpage {
-      main {
-          width: 90%;
-          height: auto; 
-          gap: 80px;
+    main {
+      width: 90%;
+      height: auto;
+      gap: 80px;
 
-          .left {
-              width: 100%;
-              .top {
-                  width: 100%;
-                  h3, h1, .p2 {
-                      width: 90%;
-                  }
-              }
-              .bottom {
-                  width: 90%;
-                  margin-bottom: 80px;
-              }
+      .left {
+        width: 100%;
+
+        .top {
+          width: 100%;
+
+          h3,
+          h1,
+          .p2 {
+            width: 90%;
           }
+        }
+
+        .bottom {
+          width: 90%;
+          margin-bottom: 80px;
+        }
       }
+    }
   }
 
   .circle-container {
-      width: 320px;
-      height: 320px;
+    width: 320px;
+    height: 320px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   #landingpage {
-      main {
-          width: 90%;
-          .left {
-              width: 100%;
-              .top {
-                  width: 100%;
-                  h3, h1, .p2 {
-                      width: 90%;
-                  }
-              }
-              .bottom {
-                  width: 90%;
-                  margin-bottom: 30px;
-              }
+    main {
+      width: 90%;
+
+      .left {
+        width: 100%;
+
+        .top {
+          width: 100%;
+
+          h3,
+          h1,
+          .p2 {
+            width: 90%;
           }
+        }
+
+        .bottom {
+          width: 90%;
+          margin-bottom: 30px;
+        }
       }
+    }
   }
 
   .circle-container {
-      width: 520px;
-      height: 520px;
+    width: 520px;
+    height: 520px;
   }
 }

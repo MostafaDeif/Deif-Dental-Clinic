@@ -1,5 +1,6 @@
 import "./index.scss"
 import Mohamed from "../../assets/Mohamed Deif.jpg"
+import { Link } from "react-router-dom"
 export default function Landing() {
 
     return (
@@ -12,7 +13,7 @@ export default function Landing() {
                         {/* <p className="p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud.</p> */}
                     </div>
                     <div className="bottom">
-                        <button>CONTACT US</button>
+                        <Link className="buttonCONTACT" to="book_now">CONTACT US</Link>
                     </div>
                 </div>
 
