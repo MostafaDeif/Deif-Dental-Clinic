@@ -1,11 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./index.scss";
 import loginimg from "../../assets/cover.jpg";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { auth, db } from "../../Firebase/index";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { setDoc, doc } from "firebase/firestore";
-import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 
 export default function SignUp() {
@@ -14,70 +13,53 @@ export default function SignUp() {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const navigate = useNavigate();
-    // ارجعله
-    // const bcrypt = require('bcrypt'); // or a similar library for SCRYPT
-    // const hashConfig = {
-    //     algorithm: 'SCRYPT',
-    //     base64SignerKey: 'eNoeLjmVrhFqEM63DnsK2KNxt7t53Cz8i2kTTeAY0tHZiZN+fD32/WLoiR2brkQAWodFBCZLdIG/0W8yTkk9hA==',
-    //     base64SaltSeparator: 'Bw==',
-    //     rounds: 8,
-    //     memCost: 14,
-    // };
-
-    // // Example usage in a function
-    // const hashPassword = async (password) => {
-    //     const salt = await bcrypt.genSalt(hashConfig.rounds);
-    //     const hashedPassword = await bcrypt.hash(password, salt);
-    //     return hashedPassword;
-    // };
-
-    // const nameInput = useRef();
-    // const emailInput = useRef();
-    // const passwordInput = useRef();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            // const userCredential = await 
-            await createUserWithEmailAndPassword(auth, email, password);
-            const user = auth.currentUser;
-            console.log(user);
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user; // Capture user data from the result
+
             if (user) {
                 await setDoc(doc(db, "Users", user.uid), {
                     email: user.email,
                     fullName: name,
                     phoneNumber: phone,
                     token: user.uid,
-                    
                 });
             }
-            console.log("Account Created");
+
             Swal.fire({
                 icon: 'success',
                 title: 'Account Created Successfully',
                 text: 'Your account has been created successfully!',
-                // position: 'center',
                 timer: 2000,
                 showConfirmButton: false
             });
-            // toast.success("Account Created successfully", { position: "top-center" })
-            // setTimeout(() => {
-            //     navigate("/login"); // Redirects to the login page
-            // }, 2000); // Adjust delay as needed for the alert timing
+
+            setTimeout(() => {
+                navigate("/");
+            }, 2000);
 
         } catch (error) {
-            console.log(error);
+            let errorMessage;
+
+            if (error.code === 'auth/email-already-in-use') {
+                errorMessage = 'This email is already in use. Please try a different email.';
+            } else if (error.code === 'auth/invalid-email') {
+                errorMessage = 'The email address is not valid. Please enter a valid email.';
+            } else if (error.code === 'auth/weak-password') {
+                errorMessage = 'The password is too weak. Please choose a stronger password.';
+            } else {
+                errorMessage = 'An unknown error occurred. Please try again later.';
+            }
+
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: "Account Already Registered",
-                // position: 'center',
+                text: errorMessage,
                 showConfirmButton: true
-                
             });
-            
-            // toast.error(error.message, { position: "bottom-center" });
-
         }
     };
 

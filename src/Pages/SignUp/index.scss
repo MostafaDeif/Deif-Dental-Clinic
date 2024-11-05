@@ -18,7 +18,11 @@
     gap: 25px;
     flex-direction: column;
     width: calc(100% / 6)*2;
-
+    h1{
+        color: rgb(35, 41, 165);
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
     h2 {
         color: #4f77ff;
         font-weight: 800;
