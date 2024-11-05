@@ -15,14 +15,13 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // const userCredential = await 
       await signInWithEmailAndPassword(auth, email, password);
       console.log("Account loged in");
       Swal.fire({
         icon: 'success',
-        title: 'Account Created Successfully',
-        text: 'Your account has been created successfully!',
-        position: 'top-center',
+        title: 'Account login Successfully',
+        text: 'Welcome back!',
+        // position: 'center',
         timer: 1500,
         showConfirmButton: false
       });
@@ -35,8 +34,8 @@ export default function Login() {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: "Account Already Registered",
-        position: 'center',
+        text: "Account Already Registered!!!!",
+        // position: 'center',
         showConfirmButton: true
 
       });

@@ -2,12 +2,20 @@ import { Link } from "react-router-dom";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTooth } from "@fortawesome/free-solid-svg-icons";
+import Login from "../../Pages/Login";
+import { auth } from "../../Firebase";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
-  
+  const [user, setUser] = useState();
+  useEffect(() => {
+    auth.onAuthStateChanged(user => {
+      setUser(user);
+    });
+  }, [])
   return (
 
-        // <nav className="col-12 d-flex justify-content-between align-items-center  ">
+    // <nav className="col-12 d-flex justify-content-between align-items-center  ">
     //   <div className="logo font-weight-bold"><i className="fa-solid fa-tooth"></i> Deif Dental Clinic</div>
     //   <ul className="nav nav-pills">
     //     <li className="nav-item">
@@ -41,6 +49,7 @@ export default function Navbar() {
           <li><Link to="about_us" className="routelink">About Us</Link></li>
           <li><Link to="services" className="routelink">Services</Link></li>
           <li><Link to="book_now" className="routelink">Book Now</Link></li>
+          <li><Link to={user ? "/user" :"/login"} className="routelink">{user ? "User Info" : "Login"}</Link></li>
         </ul>
       </nav>
     </header>

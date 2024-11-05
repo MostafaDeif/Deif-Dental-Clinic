@@ -56,7 +56,7 @@ export default function SignUp() {
                 icon: 'success',
                 title: 'Account Created Successfully',
                 text: 'Your account has been created successfully!',
-                position: 'top-center',
+                // position: 'center',
                 timer: 2000,
                 showConfirmButton: false
             });
@@ -71,7 +71,7 @@ export default function SignUp() {
                 icon: 'error',
                 title: 'Oops...',
                 text: "Account Already Registered",
-                position: 'center',
+                // position: 'center',
                 showConfirmButton: true
                 
             });

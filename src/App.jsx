@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
 import ScrollToTop from "./Components/ScrollToTop";
 // import { db } from "./fireBase";
@@ -8,6 +8,8 @@ import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Userdata from "./Components/Userdata";
+import { auth } from "./Firebase";
 
 
 
@@ -25,6 +27,12 @@ export default function App() {
 
   //     getData();
   //   },[])
+  const [user, setUser] = useState();
+  useEffect(() => {
+    auth.onAuthStateChanged(user => {
+      setUser(user);
+    });
+  }, [])
 
   return (
     <div className="col-12 App d-flex">
@@ -41,8 +49,9 @@ export default function App() {
             {/* <Route path="join/:join_type" element={<JoinPage />} /> */}
           </Route>
           <Route path="*" element={<h1>error 404</h1>} />
-          <Route path="login" element={<Login />} />
+          <Route path="login" element={user ? <Navigate to="/" /> : <Login />} />
           <Route path="signup" element={<SignUp />} />
+          <Route path="user" element={<Userdata />} />
         </Routes>
         <ToastContainer /> {/* Add this to render the toast notifications */}
 
