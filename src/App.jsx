@@ -40,7 +40,7 @@ export default function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route path="/">
+          <Route path="/"> 
             <Route index element={<Home />} />
             <Route path="contact_us" element={<h1>contact us</h1>} />
             <Route path="about_us" element={<h1>About us</h1>} />
