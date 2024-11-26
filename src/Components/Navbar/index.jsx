@@ -1,55 +1,74 @@
 import { Link } from "react-router-dom";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTooth } from "@fortawesome/free-solid-svg-icons";
-import Login from "../../Pages/Login";
-import { auth } from "../../Firebase";
+import { faTooth } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import { auth, db } from "../../Firebase";
+import { doc, getDoc } from "firebase/firestore";
+import { onAuthStateChanged } from "firebase/auth";
 
 export default function Navbar() {
-  const [user, setUser] = useState();
+  const [userlog, setUserLog] = useState(null); 
+  const [admin, setAdmin] = useState(false); 
+
+  const checkAdminStatus = async (user) => {
+    try {
+      const userRef = doc(db, "Users", user.uid);
+      const userDoc = await getDoc(userRef);
+
+      if (userDoc.exists()) {
+        const userData = userDoc.data();
+        if (userData.admin === true) {
+          setAdmin(true);
+          console.log("User is an Admin.");
+        } else {
+          setAdmin(false);
+          console.log("User is not an Admin.");
+        }
+      } else {
+        console.log("No such user document!");
+      }
+    } catch (error) {
+      console.error("Error fetching admin status:", error);
+    }
+  };
+
   useEffect(() => {
-    auth.onAuthStateChanged(user => {
-      setUser(user);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUserLog(user);
+        checkAdminStatus(user); 
+      } else {
+        setUserLog(null); 
+        setAdmin(false);
+      }
     });
-  }, [])
+
+    return () => unsubscribe();
+  }, []);
+
   return (
-
-    // <nav className="col-12 d-flex justify-content-between align-items-center  ">
-    //   <div className="logo font-weight-bold"><i className="fa-solid fa-tooth"></i> Deif Dental Clinic</div>
-    //   <ul className="nav nav-pills">
-    //     <li className="nav-item">
-    //       <a className="nav-link active" href="#">Home</a>
-    //     </li>
-    //     <li className="nav-item">
-    //       <a className="nav-link" href="#">About Us</a>
-    //     </li>
-    //     <li className="nav-item">
-    //       <a className="nav-link" href="#">Services</a>
-    //     </li>
-    //     <li className="nav-item">
-    //       <a className="nav-link" href="#">Contact Us</a>
-    //     </li>
-    //     <li className="nav-item">
-    //       <a className="nav-link" href="#">Book Now</a>
-    //     </li>
-    //   </ul>
-    // </nav>
-
     <header>
       <div className="logo">
         <FontAwesomeIcon icon={faTooth} className="toothLogo" />
         <p>Deif Dental Clinic</p>
       </div>
-      {/* menu icon
-      <FontAwesomeIcon icon={faBars} className="menuIcon" /> */}
       <nav>
         <ul>
           <li><Link to="/" className="routelink">Home</Link></li>
           <li><Link to="about_us" className="routelink">About Us</Link></li>
           <li><Link to="services" className="routelink">Services</Link></li>
           <li><Link to="book_now" className="routelink">Book Now</Link></li>
-          <li><Link to={user ? "/user" :"/login"} className="routelink">{user ? "User Info" : "Login"}</Link></li>
+          <li>
+            <Link to={userlog ? "/user" : "/login"} className="routelink">
+              {userlog ? "User Info" : "Login"}
+            </Link>
+          </li>
+          {admin && (
+            <li>
+              <Link to="/admin" className="routelink">Admin</Link>
+            </li>
+          )}
         </ul>
       </nav>
     </header>

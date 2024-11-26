@@ -10,6 +10,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Userdata from "./Components/Userdata";
 import { auth } from "./Firebase";
+import BookNow from "./Pages/BookNow";
+import Admin from "./Pages/Admin";
 
 
 
@@ -45,13 +47,14 @@ export default function App() {
             <Route path="contact_us" element={<h1>contact us</h1>} />
             <Route path="about_us" element={<h1>About us</h1>} />
             <Route path="services" element={<h1>Services</h1>} />
-            <Route path="book_now" element={<h1>book now</h1>} />
+            <Route path="book_now" element={<BookNow />} />
             {/* <Route path="join/:join_type" element={<JoinPage />} /> */}
           </Route>
           <Route path="*" element={<h1>error 404</h1>} />
           <Route path="login" element={user ? <Navigate to="/" /> : <Login />} />
           <Route path="signup" element={<SignUp />} />
           <Route path="user" element={<Userdata />} />
+          <Route path="admin" element={<Admin />} />
         </Routes>
         <ToastContainer /> {/* Add this to render the toast notifications */}
 
