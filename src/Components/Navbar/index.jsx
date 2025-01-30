@@ -9,6 +9,7 @@ import { onAuthStateChanged } from "firebase/auth";
 export default function Navbar() {
   const [userlog, setUserLog] = useState(null); 
   const [admin, setAdmin] = useState(false); 
+  const [menu, toggleMenu]= useState(true);
 
   const checkAdminStatus = async (user) => {
     try {
@@ -47,14 +48,17 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header>
+    <nav>
+      {/* <div className="logo">
+        <FontAwesomeIcon icon={faTooth} className="toothLogo" />
+        <label>Deif Dental Clinic</label>
+      </div> */}
+    
       <div className="logo">
         <FontAwesomeIcon icon={faTooth} className="toothLogo" />
         <label>Deif Dental Clinic</label>
       </div>
-      <nav>
-    
-        <ul>
+    { menu && (<ul>
           <li><Link to="/" className="routelink">Home</Link></li>
           <li><Link to="about_us" className="routelink">About Us</Link></li>
           <li><Link to="services" className="routelink">Services</Link></li>
@@ -69,12 +73,12 @@ export default function Navbar() {
               <Link to="/admin" className="routelink">Admin</Link>
             </li>
           )}
-        </ul>
-        <input type="checkbox" id="check" />
-        <label htmlFor="check" className="checkbtn" >
+        </ul>)}
+        {/* <input type="checkbox" id="check" /> */}
+        <div htmlFor="check" className="checkbtn"onClick={()=>toggleMenu(!menu)}>
           <i className="fas fa-bars"></i>
-        </label>
-      </nav>
-    </header>
+        </div>
+     
+    </nav>
   );
 }

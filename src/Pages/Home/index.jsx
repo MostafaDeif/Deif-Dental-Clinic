@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <div className="col-12 d-flex flex-column">
       <div className="navcomp">
-        <Navbar />
       </div>
+        <Navbar />
       <div id="mother">
         <div>
           <Landing />
