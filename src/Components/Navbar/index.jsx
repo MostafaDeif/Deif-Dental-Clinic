@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { auth, db } from "../../Firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
-
 export default function Navbar() {
   const [userlog, setUserLog] = useState(null); 
   const [admin, setAdmin] = useState(false); 
@@ -51,9 +50,10 @@ export default function Navbar() {
     <header>
       <div className="logo">
         <FontAwesomeIcon icon={faTooth} className="toothLogo" />
-        <p>Deif Dental Clinic</p>
+        <label>Deif Dental Clinic</label>
       </div>
       <nav>
+    
         <ul>
           <li><Link to="/" className="routelink">Home</Link></li>
           <li><Link to="about_us" className="routelink">About Us</Link></li>
@@ -70,6 +70,10 @@ export default function Navbar() {
             </li>
           )}
         </ul>
+        <input type="checkbox" id="check" />
+        <label htmlFor="check" className="checkbtn" >
+          <i className="fas fa-bars"></i>
+        </label>
       </nav>
     </header>
   );

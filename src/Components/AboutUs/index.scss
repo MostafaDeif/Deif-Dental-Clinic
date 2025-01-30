@@ -74,9 +74,13 @@
 
     .readMore {
         color: #5C85FF;
-        width: 147px;
+        width: 18%;    
         font-size: 1.375rem;
         text-decoration: none;
+    }
+    .readMore:hover{
+        text-decoration: underline;
+        
     }
 }
 
