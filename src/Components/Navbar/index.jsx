@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTooth } from "@fortawesome/free-solid-svg-icons";
+import { faTooth } from "@fortawesome/free-solid-svg-icons"; 
 import { useEffect, useState } from "react";
 import { auth, db } from "../../Firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
-export default function Navbar() {
+export default function Navbar(props) {
   const [userlog, setUserLog] = useState(null); 
   const [admin, setAdmin] = useState(false); 
   const [menu, toggleMenu]= useState(true);
+  let menuUL = document.getElementById("menuUL")
+  
 
   const checkAdminStatus = async (user) => {
     try {
@@ -25,7 +27,7 @@ export default function Navbar() {
           setAdmin(false);
           console.log("User is not an Admin.");
         }
-      } else {
+       } else {
         console.log("No such user document!");
       }
     } catch (error) {
@@ -56,15 +58,15 @@ export default function Navbar() {
     
       <div className="logo">
         <FontAwesomeIcon icon={faTooth} className="toothLogo" />
-        <label>Deif Dental Clinic</label>
+        <h1>Deif Dental Clinic</h1>
       </div>
-    { menu && (<ul>
-          <li><Link to="/" className="routelink">Home</Link></li>
-          <li><Link to="about_us" className="routelink">About Us</Link></li>
-          <li><Link to="services" className="routelink">Services</Link></li>
-          <li><Link to="book_now" className="routelink">Book Now</Link></li>
+    { menu && (<ul id="menuUL">
+          <li><Link to="/" className={props.activeHome +" routelink"}>Home</Link></li>
+          <li><Link to="/about_us" className={props.activeAbout +" routelink"}>About Us</Link></li>
+          <li><Link to="/services" className={props.activeServices +" routelink"}>Services</Link></li>
+          <li><Link to="/book_now" className={props.activeBook +" routelink"}>Book Now</Link></li>
           <li>
-            <Link to={userlog ? "/user" : "/login"} className="routelink">
+            <Link to={userlog ? "/user" : "/login"} className={props.activeLogin +" routelink"}>
               {userlog ? "User Info" : "Login"}
             </Link>
           </li>

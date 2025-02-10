@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.social-icons a{
+    font-size: 2rem;
+    color: #9ea4b4;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 20px;
+    text-decoration: none;
+
+}
+.routelinkk, a.email{
+    display: block;
+    color: #9ea4b4 !important;
+}
+
+.footer{
+    color: #9ea4b4;
+    margin: 40px;
+    border-radius: 25px;
+    background-color: rgb(12 31 66);
+}
+
+.copyRights{
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.dental-info{
+    width: 280px;
+}
+
+.pages{
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-info{
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.clinic-hours{
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.footTop{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 50px;
+}
+.clinic-hours-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.lineFoot{
+    
+    padding: 0 50px;
+    height: 1px;
+    background-color: #192d47;
+}
+
+
+@media (max-width: 767px) {
+    .footTop{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 15px;
+    }
+    .footer{
+        margin: 25px;
+        border-radius: 25px;
+    }
+    
+}

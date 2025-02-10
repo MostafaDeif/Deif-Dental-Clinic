@@ -1,0 +1,26 @@
+.cardComponent{
+    width: 380px;
+    border: 0.8px solid rgba(0, 0, 0, 0.176);
+    border-radius: 30px;
+    overflow: hidden;
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.cardText{
+    padding: 20px;
+    text-align: center;
+    h2{
+        font-size: 1.8rem;
+    }
+    p{
+        font-size: 1rem;
+    }
+    .Book_Now{
+        text-decoration: none;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+}

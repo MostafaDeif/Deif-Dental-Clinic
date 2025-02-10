@@ -12,6 +12,8 @@ import Userdata from "./Components/Userdata";
 import { auth } from "./Firebase";
 import BookNow from "./Pages/BookNow";
 import Admin from "./Pages/Admin";
+import Services from "./Pages/Services";
+import About from "./Pages/About";
 
 
 
@@ -37,16 +39,14 @@ export default function App() {
   }, [])
 
   return (
-    <div className="col-12 App d-flex">
-
+    <div >
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
           <Route path="/"> 
             <Route index element={<Home />} />
-            <Route path="contact_us" element={<h1>contact us</h1>} />
-            <Route path="about_us" element={<h1>About us</h1>} />
-            <Route path="services" element={<h1>Services</h1>} />
+            <Route path="about_us" element={<About/>} />
+            <Route path="services" element={<Services />} />
             <Route path="book_now" element={<BookNow />} />
             {/* <Route path="join/:join_type" element={<JoinPage />} /> */}
           </Route>
@@ -57,7 +57,6 @@ export default function App() {
           <Route path="admin" element={<Admin />} />
         </Routes>
         <ToastContainer /> {/* Add this to render the toast notifications */}
-
       </BrowserRouter>
     </div>
   )

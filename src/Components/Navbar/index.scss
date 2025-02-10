@@ -19,16 +19,26 @@
 //   }
 // }
 
+.active{
+  padding: 8px 18px;
+  background-color: blue;
+  border-radius: 20px;
+}
 
-// .logo {
-//   display: flex;
-//   align-items: center;
-//   gap: 10px;
-// }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  h1{
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+  }
+}
 
-// .logo .toothLogo{
-//   font-size: 2rem;
-// }
+.logo .toothLogo{
+  font-size: 2rem;
+}
 
 // .logo label {
 //   margin: 0;
@@ -191,7 +201,17 @@ nav ul li .routelink{
   font-size: 30px;
   display: none;
 }
+.routelink {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
 
+.routelink:hover {
+  color: blue;
+}
 @media (max-width: 600px){
   nav ul{
     padding-top: 20px;

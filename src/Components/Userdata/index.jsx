@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { auth, db } from "../../Firebase/index";
 import { setDoc, doc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar";
 
 
 export default function Userdata() {
@@ -37,6 +38,7 @@ export default function Userdata() {
 
   return (
     <div>
+      <Navbar activeLogin="active" />
       {userInfo ? (
         <div>
           <p>Name: {userInfo.fullName}</p>

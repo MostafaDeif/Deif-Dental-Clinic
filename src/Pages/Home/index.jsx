@@ -1,24 +1,28 @@
-import About from "../../Components/AboutUs";
+import AboutSection from "../../Components/AboutUs";
+import Footer from "../../Components/Footer";
 import Landing from "../../Components/Landing";
 import Navbar from "../../Components/Navbar";
-import Services from "../../Components/OurServices";
+import ServicesSection from "../../Components/OurServices";
 import "./index.scss";
 
 export default function Home() {
   return (
-    <div className="col-12 d-flex flex-column">
+    <div className="col-12">
       <div className="navcomp">
+        <Navbar activeHome="active"/>
       </div>
-        <Navbar />
-      <div id="mother">
+      <div>
         <div>
           <Landing />
         </div>
         <div>
-          <About />
+          <AboutSection />
         </div>
         <div>
-          <Services />
+          <ServicesSection />
+        </div>
+        <div>
+          <Footer />
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ import "./index.scss"
 import check from "../../assets/check.png"
 import { Link  } from 'react-router-dom'
 
-export default function About() {
+export default function AboutSection() {
   return (
     <div className="bigContainer">
       <div className='aboutUs'>
@@ -15,7 +15,7 @@ export default function About() {
         </div>
         <div className='aboutText'>
           <h3>About us</h3>
-          <h2>your <span>trusted partner</span> for dental Healt</h2>
+          <h2>your <span>trusted partner</span> for dental Health</h2>
           <p>Our team is dedicated to providing the best possible dental care for you. A healthy smile is a happy smile – we help you achieve both!</p>
           <div className='advantages'>
             <h5><img src={check} width={20} alt="check" /> Modern Equipment</h5>
