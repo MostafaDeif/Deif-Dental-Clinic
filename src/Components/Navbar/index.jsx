@@ -12,7 +12,7 @@ export default function Navbar(props) {
   const [menu, toggleMenu]= useState(true);
   let menuUL = document.getElementById("menuUL")
   
-
+  
   const checkAdminStatus = async (user) => {
     try {
       const userRef = doc(db, "Users", user.uid);

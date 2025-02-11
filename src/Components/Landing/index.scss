@@ -63,6 +63,7 @@
       @media (min-width: 100px) and (max-width: 767px) {
         width: 100%;
         display: flex;
+        gap: 50px;
         flex-wrap: wrap;
         justify-content: center;
       }
@@ -123,21 +124,9 @@
 
           }
         }
-
+        
         h1 {
           width: 600px;
-
-          @media (min-width: 100px) and (max-width: 767px) {
-            width: 90%;
-            text-align: left;
-          }
-
-          @media (min-width: 768px) and (max-width: 1024px) {
-            width: 90%;
-            text-align: left;
-
-          }
-
           height: 168px;
           font-family: 'Source Serif Pro';
           font-size: 4rem;
@@ -146,6 +135,21 @@
           letter-spacing: -0.04em;
           text-align: left;
           color: #142349;
+          
+          @media (min-width: 100px) and (max-width: 767px) {
+            width: 90%;
+            text-align: left;
+            line-height: 48.6px;
+            height: 100px;
+
+          }
+
+          @media (min-width: 768px) and (max-width: 1024px) {
+            width: 90%;
+            text-align: left;
+
+          }
+
 
           span {
             color: #3366FF;
@@ -156,6 +160,18 @@
             line-height: 62.6px;
             letter-spacing: -0.04em;
             text-align: left;
+            @media (min-width: 100px) and (max-width: 767px) {
+              width: 90%;
+              text-align: left;
+              line-height: 48.6px;
+  
+            }
+  
+            @media (min-width: 768px) and (max-width: 1024px) {
+              width: 90%;
+              text-align: left;
+  
+            }
           }
         }
 
@@ -234,11 +250,14 @@
   @media (min-width: 100px) and (max-width: 767px) {
     width: 320px;
     height: 320px;
+    margin-bottom: 30px;
   }
 
   @media (min-width: 768px) and (max-width: 1024px) {
     width: 520px;
     height: 520px;
+    margin-bottom: 30px;
+
     // edit tablate size
   }
 

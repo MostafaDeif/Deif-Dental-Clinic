@@ -28,7 +28,7 @@ export default function Services() {
         <Card head="Smile Makeover" img={ss} para="A customized treatment plan combining cosmetic and restorative dentistry to transform your smile." />
         <Card head="Oral Surgery" img={ss} para="Expert surgical care, including corrective procedures and extractions, for improved oral function." />
         <Card head="Orthodontics" img={ss} para="Straighten your teeth with braces or clear aligners for a healthier, more aligned smile." />
-      
+    
       </div>
       <div>
         <Footer/>

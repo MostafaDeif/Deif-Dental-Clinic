@@ -2,16 +2,15 @@ import test from '../../assets/test.jpg'
 import Mohamed from '../../assets/Mohamed Deif.jpg'
 import "./index.scss"
 import check from "../../assets/check.png"
-import { Link  } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function AboutSection() {
   return (
     <div className="bigContainer">
       <div className='aboutUs'>
-        <div className="containerImage">
-          <div className='image'>
-            <img src={Mohamed} alt="DR.Mohamed Deif" />
-          </div>
+        <div className='image'>
+          <div className='DR'><h2>Dr. Mohamed Deif</h2></div>
+          <img src={Mohamed} alt="DR.Mohamed Deif" />
         </div>
         <div className='aboutText'>
           <h3>About us</h3>

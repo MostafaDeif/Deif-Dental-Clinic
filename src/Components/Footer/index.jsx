@@ -2,6 +2,7 @@ import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import { faLocationDot, faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons"; // ❌ This will cause the error
 
 export default function Footer(props) {
   return (
@@ -10,7 +11,7 @@ export default function Footer(props) {
         <div className="dental-info">
           <h1>Deif Dental Clinic</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, ipsam.
+            Quality dental care for a healthy, bright smile. Book now!
           </p>
           <div className="social-icons">
             <a target="_blank" href="https://www.facebook.com/DrMohamedDeif"><FontAwesomeIcon icon={faFacebook} /></a>
@@ -28,9 +29,16 @@ export default function Footer(props) {
         </div>
         <div className="contact-info">
           <h2>Contact Info</h2>
-          <div>+20 11 2416 6303</div>
-          <a target="_blank" href="#" className="email">mostafadeif11@gmail.com</a>
-          <div>
+          <div className="mail">
+            <FontAwesomeIcon icon={faPhone} />
+            <p>+20 11 2416 6303</p>
+            </div>
+          <div className="mail">
+            <FontAwesomeIcon icon={faEnvelope} />
+            <a target="_blank" href="#" className="email">mostafadeif11@gmail.com</a>
+          </div>
+          <div className="mail">
+            <FontAwesomeIcon icon={faLocationDot} />
             بجوار مستشفى الهدي, ٦٥ش وائل مدينة الشمس, قسم حلوان، محافظة القاهرة
           </div>
         </div>
@@ -40,7 +48,7 @@ export default function Footer(props) {
             <span>Saturday to Thursday</span>
             <span>04:00 - 11:00</span>
           </div>
-          <div>
+          <div className="clinic-hours-content">
             <span>Friday</span>
             <span>Closed</span>
           </div>

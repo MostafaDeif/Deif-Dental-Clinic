@@ -29,12 +29,12 @@ export default function Booking() {
                         <input type="text" name="name" id="name" placeholder="Enter Your Name .." required />
                     </div>
                     <div className="inputSell">
-                        <label htmlFor="Email">Email</label>
-                        <input type="email" name="Email" id="Email" placeholder="Enter Your Email .." />
-                    </div>
-                    <div className="inputSell">
                         <label htmlFor="phone">Phone Number *</label>
                         <input type="tel" name="phone" id="phone" placeholder="Enter Your Phone .." required />
+                    </div>
+                    <div className="inputSell">
+                        <label htmlFor="Email">Email</label>
+                        <input type="email" name="Email" id="Email" placeholder="Enter Your Email .." />
                     </div>
                     <div className="inputSell">
                         <label htmlFor="Service">Dental Service</label>
