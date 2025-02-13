@@ -12,10 +12,9 @@
   width: 1200px;
   max-width: 100%;
   justify-content: space-around;
-
 }
 
-.image {
+.imageContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,58 +23,90 @@
   position: relative;
 
   .DR {
-    width: 200px;    
-    border-radius: 20px;
+    display: flex;
+    color: white;
+    background-color: #3366ff;
+    align-items: center;
+    width: 170px;
+    border-radius: 10px;
     position: absolute;
-    top: 100px;
+    top: 130px;
     left: -60px;
     z-index: 200;
     margin: 0;
     padding: 10px 15px;
-
-    h2 {
-      padding: 0;
-      margin: 0;
-      width: 200px;
-      font-size: 1.2rem;
+    // position: relative;
+    .iconColor {
+      position: absolute;
+      left: -10px;
+      top: -8px;
+      z-index: 10000;
+      background-color: #ff9140;
+      padding: 8px;
+      border-radius: 8px;
+      .icon {
+        width: 25px !important;
+        height: 25px;
+        color: #fff;
+        font-size: 2.2rem;
+        // position: absolute;
+        // left: -20px;
+      }
+    }
+    div {
+      padding-left: 25px;
+      h2 {
+        padding: 0;
+        margin: 0;
+        width: 200px;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+      h3 {
+        padding: 0;
+        margin: 0;
+        width: 200px;
+        font-size: 0.8rem;
+        padding-top: 3px;
+        font-weight: 600;
+      }
     }
   }
-  img {
+  .drImage {
     width: 325px;
     object-fit: cover;
     border-radius: 22px;
   }
 }
 @media (max-width: 767px) {
-    .image{
-        margin-top: 50px;
-        margin-bottom: 30px;
-        width: 300px;
-        h2{
-            font-size: 1.6rem !important;
-        }
-        img{
-            width: 300px;
-        }
+  .imageContainer {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 300px;
+    h2 {
+      font-size: 1.6rem !important;
     }
+    img {
+      width: 300px;
+    }
+  }
 }
-@media (min-width: 767px) and (max-width: 1025px){
-    .image{
-        margin-top: 50px;
-        margin-bottom: 30px;
-        width: 300px;
+@media (min-width: 767px) and (max-width: 1025px) {
+  .imageContainer {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 300px;
 
-        .DR{
-            left: -46px;
-
-        }
-        h2{
-            font-size: 1.1rem !important;
-        }
-        img{
-            width: 300px;
-        }
+    .DR {
+      left: -46px;
     }
+    h2 {
+      font-size: 1.1rem !important;
+    }
+    img {
+      width: 300px;
+    }
+  }
 }
 
 .aboutText {
@@ -129,17 +160,6 @@
     width: 47%;
   }
 }
-
-// @media screen and (min-width: 100px) {
-//     /* font at xs */
-//     html {
-//       font-size: 10px !important;
-//     }
-//     // .aboutUs{
-//     //     display: flex;
-//     //     flex-wrap: wrap;
-//     // }
-//   }
 
 @media screen and (max-width: 767px) {
   /* font at sm */

@@ -1,63 +1,62 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Home from "./Pages/Home";
-import ScrollToTop from "./Components/ScrollToTop";
-// import { db } from "./fireBase";
-import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import Login from "./Pages/Login";
-import SignUp from "./Pages/SignUp";
+import { auth } from "./Firebase";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
 import Userdata from "./Components/Userdata";
-import { auth } from "./Firebase";
 import BookNow from "./Pages/BookNow";
 import Admin from "./Pages/Admin";
 import Services from "./Pages/Services";
 import About from "./Pages/About";
-
-
-
+import ScrollToTop from "./Components/ScrollToTop";
+import ProtectedRoute from "./Components/Portected"; // استيراد الحماية
 
 export default function App() {
-  //   const [products ,setProducts] = useState([]);
-  //   const getData = async () => {
-  //     const products = await getDocs(collection(db, "products"));
-  //     products.forEach((doc) => {
-  //       // doc.data() is never undefined for query doc snapshots
-  //       console.log(doc.id, " => ", doc.data());
-  //     });
-  //   }
-  //   useEffect(()=>{
+  const [user, setUser] = useState(null);
 
-  //     getData();
-  //   },[])
-  const [user, setUser] = useState();
   useEffect(() => {
-    auth.onAuthStateChanged(user => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
       setUser(user);
     });
-  }, [])
+    return () => unsubscribe(); // Cleanup لمنع تسريبات الذاكرة
+  }, []);
 
   return (
-    <div >
+    <div>
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route path="/"> 
-            <Route index element={<Home />} />
-            <Route path="about_us" element={<About/>} />
-            <Route path="services" element={<Services />} />
-            <Route path="book_now" element={<BookNow />} />
-            {/* <Route path="join/:join_type" element={<JoinPage />} /> */}
-          </Route>
-          <Route path="*" element={<h1>error 404</h1>} />
+          <Route path="/" element={<Home />} />
+          <Route path="about_us" element={<About />} />
+          <Route path="services" element={<Services />} />
+          <Route path="book_now" element={<BookNow />} />
+
+          {/* حماية صفحات المستخدمين */}
+          <Route path="user" element={
+            <ProtectedRoute user={user}>
+              <Userdata />
+            </ProtectedRoute>
+          } />
+
+          <Route path="admin" element={
+            <ProtectedRoute user={user}>
+              <Admin />
+            </ProtectedRoute>
+          } />
+
+          {/* التحكم في التوجيه */}
           <Route path="login" element={user ? <Navigate to="/" /> : <Login />} />
           <Route path="signup" element={<SignUp />} />
-          <Route path="user" element={<Userdata />} />
-          <Route path="admin" element={<Admin />} />
+
+          <Route path="*" element={<h1>Error 404 - Page Not Found</h1>} />
         </Routes>
-        <ToastContainer /> {/* Add this to render the toast notifications */}
+
+        {/* تحسين ToastContainer ليعمل بشكل مثالي */}
+        <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
       </BrowserRouter>
     </div>
-  )
+  );
 }
