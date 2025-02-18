@@ -2,7 +2,7 @@ import "./index.scss";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { db, auth, collection, addDoc, query, where, getDocs } from "../../Firebase"; // Import Firebase functions
+import { db, auth, collection, addDoc, query, where, getDocs } from "../../Firebase";
 
 const Booking = () => {
     const getToday = () => new Date().toISOString().split("T")[0];
@@ -94,8 +94,8 @@ const Booking = () => {
                 <div className="clinicHours">
                     <h3 id="Hours">Clinic Hours</h3>
                     <div className="aline"></div>
-                    <div className="session"><span>Saturday to Thursday</span> <span>04:00 - 10:00</span></div>
-                    <div className="session"><span>Friday</span> <span>Closed</span></div>
+                    <div className="session"><span>Sunday to Thursday</span> <span>04:00 - 10:00</span></div>
+                    <div className="session"><span>Saturday - Friday</span> <span>Closed</span></div>
                 </div>
                 <iframe className="location"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d865.2175443414189!2d31.342429730416978!3d29.839168861747954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458375d58e8fafb%3A0x609436be3ce4c17b!2zRGVpZiBEZW50YWwgQ2xpbmljINi52YrYp9iv2Kkg2LbZitmBINmE2YTYp9iz2YbYp9mG!5e0!3m2!1sar!2seg!4v1732223041121!5m2!1sar!2seg"

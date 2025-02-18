@@ -1,9 +1,6 @@
-import test from '../../assets/test.jpg'
 import Mohamed from '../../assets/Mohamed Deif.jpg'
 import "./index.scss"
 import check from "../../assets/check.png"
-import icon from "../../assets/Group 22.png"
-import mask from "../../assets/Mask.png"
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserDoctor } from "@fortawesome/free-solid-svg-icons";

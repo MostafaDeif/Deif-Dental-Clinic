@@ -7,17 +7,18 @@ import { auth, db } from "../../Firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 
+
 export default function Navbar(props) {
   const [userlog, setUserLog] = useState(null);
   const [admin, setAdmin] = useState(false);
   const [isWidthLessThan600, setIsWidthLessThan600] = useState(window.innerWidth < 600);
   const [menuOpen, setMenuOpen] = useState(false);
-  
+
   useEffect(() => {
     const checkWidth = () => {
       const isSmallScreen = window.innerWidth < 600;
       setIsWidthLessThan600(isSmallScreen);
-      
+
       // Ensure menu is closed on small screens by default
       if (isSmallScreen) {
         setMenuOpen(false);
@@ -60,10 +61,12 @@ export default function Navbar(props) {
 
   return (
     <nav>
-      <div className="logo">
-        <FontAwesomeIcon icon={faTooth} className="toothLogo" />
-        <h1>Deif Dental Clinic</h1>
-      </div>
+      <a href="#" className="linklogo">
+        <div className="logo">
+          <FontAwesomeIcon icon={faTooth} className="toothLogo" />
+          <h1>Deif Dental Clinic</h1>
+        </div>
+      </a>
 
       {/* Toggle Button for Small Screens */}
       {isWidthLessThan600 && (

@@ -22,7 +22,34 @@
   position: relative;
 }
 
+.submitButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #1e41ff, #007bff);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  width: fit-content; /* Takes only its size */
+}
 
+.submitButton:hover {
+  background: linear-gradient(135deg, #007bff, #1e41ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.submitButton:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
 
 
 #landingpage {
@@ -187,55 +214,55 @@
         }
       }
 
-      .bottom {
-        width: 182px;
-        height: 40px;
+      // .bottom {
+      //   width: 182px;
+      //   height: 40px;
 
-        @media (min-width: 100px) and (max-width: 767px) {
-          width: 90%;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          margin-bottom: 80px;
-        }
+      //   @media (min-width: 100px) and (max-width: 767px) {
+      //     width: 90%;
+      //     display: flex;
+      //     flex-wrap: wrap;
+      //     justify-content: center;
+      //     margin-bottom: 80px;
+      //   }
 
-        @media (min-width: 768px) and (max-width: 1024px) {
-          width: 90%;
-          display: flex;
-          justify-content: center;
-          margin-bottom: 30px;
-        }
+      //   @media (min-width: 768px) and (max-width: 1024px) {
+      //     width: 90%;
+      //     display: flex;
+      //     justify-content: center;
+      //     margin-bottom: 30px;
+      //   }
 
-        .buttonCONTACT {
-          display: flex;
-          width: 182px;
-          height: 40px;
-          text-decoration: none;
-          box-shadow: 1px 10px 12.7px 0px rgba(49, 119, 225, 0.2392156863);
-          padding: 16px 28px;
-          background: #3366FF;
-          border: solid 1px #3366FF;
-          border-radius: 192px;
-          -webkit-border-radius: 192px;
-          -moz-border-radius: 192px;
-          -ms-border-radius: 192px;
-          -o-border-radius: 192px;
-          align-items: center;
-          justify-content: center;
-          // font-family: 'Plus Jakarta Sans';
-          font-size: 15px;
-          font-weight: 600;
-          line-height: 18.9px;
-          letter-spacing: 0.15em;
-          text-align: left;
-          color: #FFFFFF;
+      //   // .buttonCONTACT {
+      //   //   display: flex;
+      //   //   width: 182px;
+      //   //   height: 40px;
+      //   //   text-decoration: none;
+      //   //   box-shadow: 1px 10px 12.7px 0px rgba(49, 119, 225, 0.2392156863);
+      //   //   padding: 16px 28px;
+      //   //   background: #3366FF;
+      //   //   border: solid 1px #3366FF;
+      //   //   border-radius: 192px;
+      //   //   -webkit-border-radius: 192px;
+      //   //   -moz-border-radius: 192px;
+      //   //   -ms-border-radius: 192px;
+      //   //   -o-border-radius: 192px;
+      //   //   align-items: center;
+      //   //   justify-content: center;
+      //   //   // font-family: 'Plus Jakarta Sans';
+      //   //   font-size: 15px;
+      //   //   font-weight: 600;
+      //   //   line-height: 18.9px;
+      //   //   letter-spacing: 0.15em;
+      //   //   text-align: left;
+      //   //   color: #FFFFFF;
 
-          &:hover {
-            background-color: transparent;
-            color: #3366FF;
-          }
-        }
-      }
+      //   //   &:hover {
+      //   //     background-color: transparent;
+      //   //     color: #3366FF;
+      //   //   }
+      //   // }
+      // }
     }
   }
 }

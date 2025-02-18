@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
-import Userdata from "./Components/Userdata";
+import UserInfo from "./Components/Userdata";
 import BookNow from "./Pages/BookNow";
 import Admin from "./Pages/Admin";
 import Services from "./Pages/Services";
@@ -37,7 +37,7 @@ export default function App() {
           {/* حماية صفحات المستخدمين */}
           <Route path="user" element={
             <ProtectedRoute user={user}>
-              <Userdata />
+              <UserInfo />
             </ProtectedRoute>
           } />
 

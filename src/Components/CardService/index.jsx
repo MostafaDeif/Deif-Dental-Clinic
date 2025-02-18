@@ -1,17 +1,13 @@
 import "./index.scss";
-import ss from "../../assets/dental-care1.webp";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { Link  } from 'react-router-dom'
-export default function Card(props) {
+import { Link } from "react-router-dom";
+
+export default function Card({ img, alt, head, para }) {
   return (
     <div className="cardComponent">
-      <img src={props.img} alt={props.alt} />
+      <img src={img} alt={alt} className="cardImage" />
       <div className="cardText">
-        <h2>{props.head}</h2>
-        <p>
-          {props.para}
-        </p>
+        <h2>{head}</h2>
+        <p>{para}</p>
         <Link to="/book_now" className="Book_Now">
           Book Now
         </Link>

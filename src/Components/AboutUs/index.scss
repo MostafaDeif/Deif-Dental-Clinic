@@ -40,7 +40,7 @@
       position: absolute;
       left: -10px;
       top: -8px;
-      z-index: 10000;
+      z-index: 1000;
       background-color: #ff9140;
       padding: 8px;
       border-radius: 8px;
@@ -141,14 +141,23 @@
   }
 
   .readMore {
-    color: #5c85ff;
-    width: 18%;
+    color: #3366ff;
     font-size: 1.375rem;
+    font-weight: 600;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Space for icon if needed */
+    transition: all 0.3s ease-in-out;
+    width: fit-content; /* Ensures it only takes its content size */
   }
+  
   .readMore:hover {
     text-decoration: underline;
+    color: #1e41ff;
+    transform: translateX(3px); /* Subtle movement for a nice effect */
   }
+  
 }
 
 .advantages {

@@ -15,19 +15,32 @@
   display: flex;
   flex-direction: column-reverse;
   .routelinkEX {
-    background-color: #3366ff;
-    padding: 20px 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e41ff, #3366ff);
+    padding: 16px 28px;
     border-radius: 30px;
     font-size: 1.2rem;
     font-weight: 700;
     color: white;
     text-decoration: none;
-    transition: color 0.3s ease;
-
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
-  .routelinkEX:hover{
-    color: blue;
+  
+  .routelinkEX:hover {
+    background: linear-gradient(135deg, #3366ff, #1e41ff);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    color: #d9e3ff;
   }
+  
+  .routelinkEX:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
 }
 
 .OurServices {
