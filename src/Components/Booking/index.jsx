@@ -124,15 +124,21 @@ const Booking = () => {
                         <label htmlFor="email">Email</label>
                         <input type="email" name="email" id="email" placeholder="Enter Your Email .." value={formData.email} onChange={handleChange} />
                     </div>
-                    <div className="inputSell">
-                        <label htmlFor="service">Dental Service</label>
-                        <select name="service" id="service" value={formData.service} onChange={handleChange}>
-                            <option value="Full">Full Mouth Cases</option>
-                            <option value="implants">Dental Implants</option>
-                            <option value="Child">Child Dentistry</option>
-                            <option value="Whitening">Teeth Whitening</option>
-                        </select>
-                    </div>
+                        <div className="inputSell">
+                            <label htmlFor="service">Dental Service</label>
+                            <select name="service" id="service" value={formData.service} onChange={handleChange} required>
+                                <option value="" hidden >Select Service</option>
+                                <option value="Dental implants">Dental Implants</option>
+                                <option value="General Denistry">General Denistry</option>
+                                <option value="Teeth Whitening">Teeth Whitening</option>
+                                <option value="Tooth Extraction">Tooth Extraction</option>
+                                <option value="Wisdom Teeth Removal">Wisdom Teeth Removal</option>
+                                <option value="Broken Tooth Repairs">Broken Tooth Repairs</option>
+                                <option value="Smile Makeover">Smile Makeover</option>
+                                <option value="Oral Surgery">Oral Surgery</option>
+                                <option value="Orthodontics">Orthodontics</option>
+                            </select>
+                        </div>
                     <div className="inputSell">
                         <label htmlFor="date">Preferred Date</label>
                         <input 
@@ -148,7 +154,7 @@ const Booking = () => {
                     <div className="inputSell">
                         <label htmlFor="time">Preferred Time</label>
                         <select name="time" id="time" value={formData.time} onChange={handleChange} required>
-                            <option value="" disabled>Select Time</option>
+                            <option value="" disabled >Select Time</option>
                             {allowedTimes.map((time) => (
                                 <option key={time} value={time} disabled={bookedSlots.includes(time)}>
                                     {time} {bookedSlots.includes(time) ? "(Booked)" : ""}

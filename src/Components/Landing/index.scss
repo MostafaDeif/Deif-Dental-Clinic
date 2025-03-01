@@ -59,7 +59,7 @@
   justify-content: center;
   
   main {
-    width: 1297px;
+    width: 100%;
 
     @media (min-width: 100px) and (max-width: 767px) {
       width: 90%;
@@ -75,9 +75,9 @@
       height: auto;
     }
 
-    height: 680px;
+    height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 
     .left {

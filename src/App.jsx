@@ -54,8 +54,7 @@ export default function App() {
           <Route path="*" element={<h1>Error 404 - Page Not Found</h1>} />
         </Routes>
 
-        {/* تحسين ToastContainer ليعمل بشكل مثالي */}
-        <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
+        <ToastContainer position="bottom-right" autoClose={3000} hideProgressBar={false} />
       </BrowserRouter>
     </div>
   );
