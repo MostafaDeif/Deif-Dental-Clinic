@@ -18,7 +18,7 @@ const Admin = () => {
       };
     const fetchBookings = async () => {
         try {
-            const querySnapshot = await getDocs(collection(db, "reservations"));
+            const querySnapshot = await getDocs(collection(db, "Reservations"));
             const bookingsList = querySnapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
@@ -34,7 +34,7 @@ const Admin = () => {
 
     const deleteBooking = async (id) => {
         try {
-            await deleteDoc(doc(db, "reservations", id));
+            await deleteDoc(doc(db, "Reservations", id));
             setBookings(bookings.filter((booking) => booking.id !== id));
             toast.success("Booking deleted successfully!");
         } catch (error) {

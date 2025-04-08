@@ -17,7 +17,7 @@ const UserInfo = () => {
       if (!userId) return;
 
       try {
-        const q = query(collection(db, "reservations"), where("userId", "==", userId));
+        const q = query(collection(db, "Reservations"), where("userId", "==", userId));
         const querySnapshot = await getDocs(q);
         const userBookings = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         setBookings(userBookings);
@@ -48,7 +48,7 @@ const UserInfo = () => {
 
   const handleDeleteBooking = async (bookingId) => {
     try {
-      await deleteDoc(doc(db, "reservations", bookingId));
+      await deleteDoc(doc(db, "Reservations", bookingId));
       setBookings(bookings.filter(booking => booking.id !== bookingId));
       toast.success("Booking deleted successfully!");
     } catch (error) {

@@ -11,7 +11,7 @@ const Booking = () => {
         name: "",
         phone: "",
         email: "",
-        service: "Full",
+        service: "",
         date: getToday(),
         time: "",
         message: ""
@@ -32,7 +32,7 @@ const Booking = () => {
     }, [formData.date]);
 
     const fetchBookedSlots = async (date) => {
-        const q = query(collection(db, "reservations"), where("date", "==", date));
+        const q = query(collection(db, "Reservations"), where("date", "==", date));
         const querySnapshot = await getDocs(q);
         const booked = querySnapshot.docs.map((doc) => doc.data().time);
         setBookedSlots(booked);
@@ -67,7 +67,7 @@ const Booking = () => {
         }
 
         try {
-            await addDoc(collection(db, "reservations"), {
+            await addDoc(collection(db, "Reservations"), {
                 userId: user.uid,
                 ...formData
             });
@@ -110,7 +110,7 @@ const Booking = () => {
             <div className="bookingContent">
                 <h2 id="bookingTitle">Get your Care</h2>
                 <p>You can simply communicate with us by submitting this form and we will respond to you ASAP.</p>
-                
+
                 <form className="bookingForm" onSubmit={handleSubmit}>
                     <div className="inputSell">
                         <label htmlFor="name">Name *</label>
@@ -124,30 +124,30 @@ const Booking = () => {
                         <label htmlFor="email">Email</label>
                         <input type="email" name="email" id="email" placeholder="Enter Your Email .." value={formData.email} onChange={handleChange} />
                     </div>
-                        <div className="inputSell">
-                            <label htmlFor="service">Dental Service</label>
-                            <select name="service" id="service" value={formData.service} onChange={handleChange} required>
-                                <option value="" hidden >Select Service</option>
-                                <option value="Dental implants">Dental Implants</option>
-                                <option value="General Denistry">General Denistry</option>
-                                <option value="Teeth Whitening">Teeth Whitening</option>
-                                <option value="Tooth Extraction">Tooth Extraction</option>
-                                <option value="Wisdom Teeth Removal">Wisdom Teeth Removal</option>
-                                <option value="Broken Tooth Repairs">Broken Tooth Repairs</option>
-                                <option value="Smile Makeover">Smile Makeover</option>
-                                <option value="Oral Surgery">Oral Surgery</option>
-                                <option value="Orthodontics">Orthodontics</option>
-                            </select>
-                        </div>
+                    <div className="inputSell">
+                        <label htmlFor="service">Dental Service</label>
+                        <select name="service" id="service" value={formData.service} onChange={handleChange} required>
+                            <option value="" hidden >Select Service</option>
+                            <option value="Dental implants">Dental Implants</option>
+                            <option value="General Denistry">General Denistry</option>
+                            <option value="Teeth Whitening">Teeth Whitening</option>
+                            <option value="Tooth Extraction">Tooth Extraction</option>
+                            <option value="Wisdom Teeth Removal">Wisdom Teeth Removal</option>
+                            <option value="Broken Tooth Repairs">Broken Tooth Repairs</option>
+                            <option value="Smile Makeover">Smile Makeover</option>
+                            <option value="Oral Surgery">Oral Surgery</option>
+                            <option value="Orthodontics">Orthodontics</option>
+                        </select>
+                    </div>
                     <div className="inputSell">
                         <label htmlFor="date">Preferred Date</label>
-                        <input 
-                            type="date" 
-                            name="date" 
-                            id="date" 
-                            value={formData.date} 
-                            onChange={handleChange} 
-                            min={getToday()} 
+                        <input
+                            type="date"
+                            name="date"
+                            id="date"
+                            value={formData.date}
+                            onChange={handleChange}
+                            min={getToday()}
                         />
                         {isWeekend(formData.date) && <p style={{ color: "red" }}>⚠️ Cannot book on Friday or Saturday</p>}
                     </div>
