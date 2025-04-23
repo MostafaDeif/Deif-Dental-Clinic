@@ -1,0 +1,49 @@
+.image-only-slider {
+    padding: 2rem 0;
+    background-color: #fff;
+    max-width: 1400px;
+    margin: 0 auto;
+  
+    .title {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      color: #333;
+      font-weight: 800;
+    }
+  
+    .image-slide {
+      padding: 0 1rem;
+      display: flex;
+      justify-content: center;
+  
+      img {
+        width: 100%;
+        max-width: 420px;       // 👈 Bigger image width
+        height: 280px;          // 👈 Bigger height
+        object-fit: cover;
+        border-radius: 1rem;
+        border: 6px solid #fff;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+  
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  
+    .slick-dots {
+      bottom: -30px;
+  
+      li button:before {
+        font-size: 14px;
+        color: #ccc;
+      }
+  
+      li.slick-active button:before {
+        color: #333;
+      }
+    }
+  }
+  
