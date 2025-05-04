@@ -80,6 +80,8 @@ export default function SignUp() {
                         </div>
                     </form>
                     <Link className="Rlink" to="/login">Already have an account?</Link>
+                    {/* <Link className="Rlink" to="/login">Sign Up with E-mail</Link> */}
+                    {/* <Link className="Rlink" to="/phonesignup">Sign Up with Phone Number</Link> */}
                 </div>
             </div>
             <div className="signWallpaper">

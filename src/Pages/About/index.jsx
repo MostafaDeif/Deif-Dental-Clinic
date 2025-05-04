@@ -8,13 +8,13 @@ export default function About() {
     return (
         <div>
             <div>
-                <Navbar />
-            </div>
-            <div>
-                <BeforeAfterSlider />
+                <Navbar activeAbout="active"/>
             </div>
             <div>
                 <KidsSlider/>
+            </div>
+            <div>
+                <BeforeAfterSlider />
             </div>
             <div>
                <Footer/> 

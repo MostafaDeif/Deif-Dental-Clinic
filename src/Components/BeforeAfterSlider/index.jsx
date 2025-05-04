@@ -50,11 +50,11 @@ const CustomSlider = () => {
             <div className="images">
               <div className="image-container">
                 <img src={item.beforeImg} alt="Before" />
-                {/* <p>Before</p> */}
+                <p>Before</p>
               </div>
               <div className="image-container">
                 <img src={item.afterImg} alt="After" />
-                {/* <p>After</p> */}
+                <p>After</p>
               </div>
             </div>
           </div>
