@@ -12,6 +12,95 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function ServicesSection() {
+  // In your ServicesSection component
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1200, // Laptops
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 992, // Small laptops/tablets
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 768, // Tablets
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 576, // Mobile
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+};
+  const services = [
+    {
+      head: "General Dentistry",
+      img: ss,
+      para: "Preventive care, cleanings, and fillings to keep your teeth and gums healthy."
+    },
+    {
+      head: "Dental Implant",
+      img: ss,
+      para: "Long-lasting, natural-looking replacements for missing teeth to restore function and aesthetics."
+    },
+    {
+      head: "Teeth Whitening",
+      img: ss,
+      para: "Professional whitening treatments to remove stains and brighten your smile instantly."
+    },
+    {
+      head: "Tooth Extraction",
+      img: ss,
+      para: "When necessary, we provide pain-free tooth extractions using advanced techniques."
+    },
+    {
+      head: "Wisdom Teeth Removal",
+      img: ss,
+      para: "Safe and gentle extraction of problematic wisdom teeth to prevent pain and complications."
+    },
+    {
+      head: "Broken Tooth Repairs",
+      img: ss,
+      para: "Quick and effective solutions like bonding, crowns, or veneers to restore damaged teeth."
+    },
+    {
+      head: "Smile Makeover",
+      img: ss,
+      para: "A customized treatment plan combining cosmetic and restorative dentistry to transform your smile."
+    },
+    {
+      head: "Oral Surgery",
+      img: ss,
+      para: "Expert surgical care, including corrective procedures and extractions, for improved oral function."
+    },
+    {
+      head: "Orthodontics",
+      img: ss,
+      para: "Straighten your teeth with braces or clear aligners for a healthier, more aligned smile."
+    }
+  ];
+
   return (
     <div className="ServicesSection">
       <div className="headerOfServices">
@@ -27,81 +116,21 @@ export default function ServicesSection() {
           </Link>
         </div>
       </div>
-      {/* cards here */}
+      
+      {/* Slider with cards */}
       <div className="cardss">
-        <Card head="General Denistry" img={ss} para=" Preventive care, cleanings, and fillings to keep your teeth and gums healthy." />
-        <Card head="Dental Implant" img={ss} para="Long-lasting, natural-looking replacements for missing teeth to restore function and aesthetics." />
-        <Card head="Teeth Whitening" img={ss} para="Professional whitening treatments to remove stains and brighten your smile instantly." />
+        <Slider {...settings}>
+          {services.map((service, index) => (
+            <div key={index} className="slider-card">
+              <Card 
+                head={service.head} 
+                img={service.img} 
+                para={service.para} 
+              />
+            </div>
+          ))}
+        </Slider>
       </div>
-        {/* <div className="container mt-4">
-          <div className="row justify-content-center">
-            <div className="col-md-6 col-lg-4 mb-4">
-              <div className="card">
-                <img src={tooth1} className="card-img-top" alt="Card Image 1" />
-                <div className="card-body text-center">
-                  <h5 className="card-title">General Dentistry</h5>
-                  <p className="card-text">
-                    Comprehensive care for a healthy smile! From cleanings to
-                    fillings, we keep your teeth strong and bright.
-                  </p>
-                  <Link to="/services" className="routelinkS">
-                    Learn More{" "}
-                    <FontAwesomeIcon
-                      icon={faArrowRight}
-                      className="faArrowRight"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-4 mb-4">
-              <div className="card">
-                <img
-                  src={surgical2}
-                  className="card-img-top"
-                  alt="Card Image 2"
-                />
-                <div className="card-body text-center">
-                  <h5 className="card-title">Dental Implant</h5>
-                  <p className="card-text">
-                    A permanent, natural-looking solution for missing teeth.
-                    Designed to last a lifetime. Restore your smile with
-                    confidence!
-                  </p>
-                  <Link to="/services" className="routelinkS">
-                    Learn More{" "}
-                    <FontAwesomeIcon
-                      icon={faArrowRight}
-                      className="faArrowRight"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-4 mb-4">
-              <div className="card">
-                <img src={smile} className="card-img-top" alt="Card Image 3" />
-                <div className="card-body text-center">
-                  <h5 className="card-title">Teeth Whitening</h5>
-                  <p className="card-text">
-                    Brighten your smile with professional teeth whitening! Safe,
-                    effective, and long-lasting results for a radiant, confident
-                    look.
-                  </p>
-                  <Link to="/services" className="routelinkS">
-                    Learn More{" "}
-                    <FontAwesomeIcon
-                      icon={faArrowRight}
-                      className="faArrowRight"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
     </div>
   );
 }

@@ -11,7 +11,7 @@ export default function AboutSection() {
     <div className="bigContainer">
       <div className='aboutUs'>
         <div className='imageContainer'>
-          <div className='DR'>
+          {/* <div className='DR'>
             <div className='iconColor'>
               <FontAwesomeIcon className="icon" icon={faUserDoctor} />
             </div>
@@ -19,7 +19,7 @@ export default function AboutSection() {
               <h2>Dr. Mohamed Deif</h2>
               <h3>Dentist</h3>
             </div>
-          </div>
+          </div> */}
           <img className='drImage' src={Mohamed} alt="DR.Mohamed Deif" />
         </div>
         <div className='aboutText'>
