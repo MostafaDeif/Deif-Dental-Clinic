@@ -13,46 +13,65 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function ServicesSection() {
   // In your ServicesSection component
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  arrows: false,
-  responsive: [
-    {
-      breakpoint: 1200, // Laptops
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 992, // Small laptops/tablets
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 768, // Tablets
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 576, // Mobile
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
-};
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    centerMode: true,  // Enable center mode
+    centerPadding: '0',  // Remove any extra padding
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1500, // Laptops
+        settings: {
+          slidesToShow: 2,
+          centerMode: true,  // Enable center mode
+          centerPadding: '0',  // Remove any extra padding
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 992, // Small laptops/tablets
+        settings: {
+          slidesToShow: 2,
+          centerMode: true,  // Enable center mode
+          centerPadding: '0',  // Remove any extra padding
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 800, // Tablets
+        settings: {
+          centerMode: true,  // Enable center mode
+          centerPadding: '0',  // Remove any extra padding
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 576, // Mobile
+        settings: {
+          centerMode: true,  // Enable center mode
+          centerPadding: '0',  // Remove any extra padding
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 1, // Tablets
+        settings: {
+          centerMode: true,  // Enable center mode
+          centerPadding: '0',  // Remove any extra padding
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+    ]
+  };
   const services = [
     {
       head: "General Dentistry",
@@ -116,16 +135,16 @@ const settings = {
           </Link>
         </div>
       </div>
-      
+
       {/* Slider with cards */}
       <div className="cardss">
         <Slider {...settings}>
           {services.map((service, index) => (
             <div key={index} className="slider-card">
-              <Card 
-                head={service.head} 
-                img={service.img} 
-                para={service.para} 
+              <Card
+                head={service.head}
+                img={service.img}
+                para={service.para}
               />
             </div>
           ))}
