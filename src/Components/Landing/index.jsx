@@ -12,7 +12,7 @@ export default function Landing() {
                         <h1>For a <span>brighter</span>, whiter<span> smile</span>, discover the perfect care solution today!</h1>
                         {/* <p className="p2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud.</p> */}
                     </div>
-                        <Link className="submitButton" to="book_now">CONTACT US</Link>
+                        <Link className="submitButtonLanding" to="book_now">CONTACT US</Link>
                 </div>
 
                 <div className="circle-container">

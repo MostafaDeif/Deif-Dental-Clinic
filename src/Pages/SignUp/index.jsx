@@ -6,6 +6,7 @@ import { auth, db } from "../../Firebase/index";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { setDoc, doc } from "firebase/firestore";
 import Swal from "sweetalert2";
+// import { updateProfile } from "firebase/auth";
 
 export default function SignUp() {
     const [email, setEmail] = useState('');
@@ -14,12 +15,23 @@ export default function SignUp() {
     const [phone, setPhone] = useState('');
     const navigate = useNavigate();
 
+    // Assuming `user` is the currently signed-in user
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user; // Capture user data from the result
-
+            // updateProfile(user, {
+            //     displayName: name
+            //   })
+            //     .then(() => {
+            //       console.log("Display name updated!");
+            //     })
+            //     .catch((error) => {
+            //       console.error("Error updating display name:", error);
+            //     });
             if (user) {
                 await setDoc(doc(db, "Users", user.uid), {
                     email: user.email,
@@ -71,8 +83,15 @@ export default function SignUp() {
                 <div className="contentform">
                     <form className="signForm" onSubmit={handleSubmit}>
                         <input className="normalInput" type="text" placeholder="Full Name" onChange={(e) => setName(e.target.value)} />
-                        <input className="normalInput" type="phone" placeholder="Phone Number" onChange={(e) => setPhone(e.target.value)} />
-                        <input className="normalInput" type="email" placeholder="Email Address" onChange={(e) => setEmail(e.target.value)} />
+                        <input
+                            className="normalInput"
+                            type="tel"
+                            placeholder="Phone Number"
+                            onChange={(e) => setPhone(e.target.value)}
+                            pattern="01[0-2,5]{1}[0-9]{8}"
+                            maxLength="11"
+                            title="Enter a valid Egyptian phone number starting with 010, 011, 012, or 015"
+                        />                        <input className="normalInput" type="email" placeholder="Email Address" onChange={(e) => setEmail(e.target.value)} />
                         <input className="normalInput" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
                         <div>
                             <button className="signbtn" type="submit">Sign Up</button>

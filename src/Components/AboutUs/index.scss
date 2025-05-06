@@ -5,6 +5,10 @@
   align-items: center;
   height: 100vh;
   /*edit responsive to auto*/
+  @media (min-width: 100px) and (max-width: 767px) {
+    height: auto;
+    padding: 40px 0;
+  }
 }
 
 .aboutUs {
@@ -27,7 +31,7 @@
     color: white;
     background-color: #3366ff;
     align-items: center;
-    width: 170px;
+    width: 18em;
     border-radius: 10px;
     position: absolute;
     top: 130px;
@@ -58,24 +62,28 @@
       h2 {
         padding: 0;
         margin: 0;
-        width: 200px;
+        width: 12.5em;
         font-size: 0.9rem;
         font-weight: 700;
       }
       h3 {
         padding: 0;
         margin: 0;
-        width: 200px;
+        width: 12.5em;
         font-size: 0.8rem;
         padding-top: 3px;
         font-weight: 600;
+        
       }
     }
   }
   .drImage {
-    width: 325px;
+    width: 20.3125em;
     object-fit: cover;
     border-radius: 22px;
+  }
+  @media (min-width: 100px) and (max-width: 767px) {
+    display: none;
   }
 }
 @media (max-width: 767px) {
@@ -157,7 +165,12 @@
     color: #1e41ff;
     transform: translateX(3px); /* Subtle movement for a nice effect */
   }
-  
+  @media (min-width: 100px) and (max-width: 767px) {
+  h3{
+    margin: 0;
+  }
+  }
+
 }
 
 .advantages {
@@ -177,7 +190,8 @@
   }
 
   .bigContainer {
-    margin-top: 80px;
+    // margin-top: 80px;
+    margin-top: 0px;
   }
 
   .aboutUs {
