@@ -1,12 +1,15 @@
 import "./index.scss";
-import tooth1 from "../../assets/tooth1.jpg";
-import smile from "../../assets/smile.jpg";
-import surgical2 from "../../assets/sergical2.jpg";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Card from "../CardService";
-import ss from "../../assets/dental-care1.webp";
+import implant from "../../assets/services/implant.jpg";
+import or from "../../assets/services/or.jpg";
+import borken from "../../assets/services/borken.jpg";
+import general from "../../assets/services/general.jpg";
+import white from "../../assets/services/white.jpg";
+import surg from "../../assets/services/surg.jpg";
+import smile from "../../assets/services/smile.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -28,14 +31,14 @@ export default function ServicesSection() {
       {
         breakpoint: 1500, // Laptops
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           centerMode: true,  // Enable center mode
           centerPadding: '0',  // Remove any extra padding
           slidesToScroll: 1
         }
       },
       {
-        breakpoint: 992, // Small laptops/tablets
+        breakpoint: 982, // Small laptops/tablets
         settings: {
           slidesToShow: 2,
           centerMode: true,  // Enable center mode
@@ -44,11 +47,11 @@ export default function ServicesSection() {
         }
       },
       {
-        breakpoint: 800, // Tablets
+        breakpoint: 900, // Tablets
         settings: {
           centerMode: true,  // Enable center mode
           centerPadding: '0',  // Remove any extra padding
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1
         }
       },
@@ -75,64 +78,67 @@ export default function ServicesSection() {
   const services = [
     {
       head: "General Dentistry",
-      img: ss,
+      img: general,
       para: "Preventive care, cleanings, and fillings to keep your teeth and gums healthy."
     },
     {
+      head: "Oral Surgery",
+      img: surg,
+      para: "Expert surgical care, including corrective procedures and extractions, for improved oral function."
+    },
+    {
       head: "Dental Implant",
-      img: ss,
+      img: implant,
       para: "Long-lasting, natural-looking replacements for missing teeth to restore function and aesthetics."
     },
     {
       head: "Teeth Whitening",
-      img: ss,
+      img: white,
       para: "Professional whitening treatments to remove stains and brighten your smile instantly."
     },
     {
       head: "Tooth Extraction",
-      img: ss,
+      img: surg,
       para: "When necessary, we provide pain-free tooth extractions using advanced techniques."
     },
     {
-      head: "Wisdom Teeth Removal",
-      img: ss,
-      para: "Safe and gentle extraction of problematic wisdom teeth to prevent pain and complications."
-    },
-    {
       head: "Broken Tooth Repairs",
-      img: ss,
+      img: borken,
       para: "Quick and effective solutions like bonding, crowns, or veneers to restore damaged teeth."
     },
     {
       head: "Smile Makeover",
-      img: ss,
+      img: smile,
       para: "A customized treatment plan combining cosmetic and restorative dentistry to transform your smile."
     },
     {
-      head: "Oral Surgery",
-      img: ss,
-      para: "Expert surgical care, including corrective procedures and extractions, for improved oral function."
+      head: "Wisdom Teeth Removal",
+      img: surg,
+      para: "Safe and gentle extraction of problematic wisdom teeth to prevent pain and complications."
     },
+
     {
       head: "Orthodontics",
-      img: ss,
+      img: or,
       para: "Straighten your teeth with braces or clear aligners for a healthier, more aligned smile."
     }
   ];
 
   return (
     <div className="ServicesSection">
-      <div className="headerOfServices">
-        <div className="OurServices">
-          <h2>Our Services</h2>
-          <h3>
-            <span> A Wide Range of Services</span> for your Best Smile
-          </h3>
-        </div>
-        <div className="explore">
-          <Link to="/services" className="routelinkEX">
-            Explore All Services
-          </Link>
+      <div className="containService">
+        <div className="headerOfServices">
+          <div className="OurServices">
+            <h2>Our Services</h2>
+            <h3>
+              <span> A Wide Range of Services</span> for your Best Smile
+            </h3>
+          </div>
+          <div className="explore">
+            <Link to="/services" className="routelinkEX">
+              Explore All Services
+            </Link>
+          </div>
         </div>
       </div>
 

@@ -50,12 +50,16 @@
     width: 280px;
 }
 
-.pages{
+.pages , .footerRoute{
     width: 80px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
+.pages{
+    gap: 8px;
+}
+
 
 .contact-info{
     width: 180px;
@@ -101,6 +105,8 @@
 }
 
 
+
+
 @media (max-width: 767px) {
     .footTop{
         display: flex;
@@ -114,4 +120,18 @@
         border-radius: 25px;
     }
     
+}
+@media screen and (max-width: 356px) {
+    .footerRoute{
+        width: 80vw;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        flex-direction: row;
+        .routelinkk{
+
+            width: 47%;
+        }
+    }
+
 }

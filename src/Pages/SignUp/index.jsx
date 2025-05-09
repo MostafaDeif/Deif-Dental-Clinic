@@ -3,10 +3,9 @@ import "./index.scss";
 import loginimg from "../../assets/cover.jpg";
 import { useState } from "react";
 import { auth, db } from "../../Firebase/index";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { setDoc, doc } from "firebase/firestore";
 import Swal from "sweetalert2";
-// import { updateProfile } from "firebase/auth";
 
 export default function SignUp() {
     const [email, setEmail] = useState('');
@@ -15,23 +14,20 @@ export default function SignUp() {
     const [phone, setPhone] = useState('');
     const navigate = useNavigate();
 
-    // Assuming `user` is the currently signed-in user
-
-
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const trimmedEmail = email.trim();
+        const trimmedPassword = password.trim();
+
         try {
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            const user = userCredential.user; // Capture user data from the result
-            // updateProfile(user, {
+            const userCredential = await createUserWithEmailAndPassword(auth, trimmedEmail, trimmedPassword);
+            const user = userCredential.user;
+
+            // Optional: update Firebase display name
+            // await updateProfile(user, {
             //     displayName: name
-            //   })
-            //     .then(() => {
-            //       console.log("Display name updated!");
-            //     })
-            //     .catch((error) => {
-            //       console.error("Error updating display name:", error);
-            //     });
+            // });
+
             if (user) {
                 await setDoc(doc(db, "Users", user.uid), {
                     email: user.email,
@@ -39,6 +35,14 @@ export default function SignUp() {
                     phoneNumber: phone,
                     token: user.uid,
                 });
+
+                // Save user info to localStorage
+                localStorage.setItem("user", JSON.stringify({
+                    uid: user.uid,
+                    email: user.email,
+                    fullName: name,
+                    phoneNumber: phone
+                }));
             }
 
             Swal.fire({
@@ -82,25 +86,48 @@ export default function SignUp() {
                 <h2>Sign Up</h2>
                 <div className="contentform">
                     <form className="signForm" onSubmit={handleSubmit}>
-                        <input className="normalInput" type="text" placeholder="Full Name" onChange={(e) => setName(e.target.value)} />
+                        <input
+                            className="normalInput"
+                            type="text"
+                            placeholder="Full Name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required
+                        />
                         <input
                             className="normalInput"
                             type="tel"
                             placeholder="Phone Number"
+                            value={phone}
                             onChange={(e) => setPhone(e.target.value)}
-                            pattern="01[0-2,5]{1}[0-9]{8}"
+                            pattern="01[0125][0-9]{8}"
                             maxLength="11"
                             title="Enter a valid Egyptian phone number starting with 010, 011, 012, or 015"
-                        />                        <input className="normalInput" type="email" placeholder="Email Address" onChange={(e) => setEmail(e.target.value)} />
-                        <input className="normalInput" type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+                            required
+                        />
+                        <input
+                            className="normalInput"
+                            type="email"
+                            placeholder="Email Address"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                        <input
+                            className="normalInput"
+                            type="password"
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            minLength="6"
+                            required
+                        />
                         <div>
                             <button className="signbtn" type="submit">Sign Up</button>
                             <span></span>
                         </div>
                     </form>
                     <Link className="Rlink" to="/login">Already have an account?</Link>
-                    {/* <Link className="Rlink" to="/login">Sign Up with E-mail</Link> */}
-                    {/* <Link className="Rlink" to="/phonesignup">Sign Up with Phone Number</Link> */}
                 </div>
             </div>
             <div className="signWallpaper">

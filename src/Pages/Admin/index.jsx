@@ -63,6 +63,7 @@ const Admin = () => {
                                     <p><strong>Service:</strong> {booking.service}</p>
                                     <p><strong>Date:</strong> {booking.date} ({getDayName(booking.date)})</p>
                                     <p><strong>Time:</strong> {booking.time}</p>
+                                    <p><strong>Message:</strong> {booking.message}</p>
                                 </div>
                                 <button className="delete-button" onClick={() => deleteBooking(booking.id)}>Delete</button>
                             </li>

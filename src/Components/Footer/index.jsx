@@ -22,17 +22,19 @@ export default function Footer(props) {
         </div>
         <div className="pages">
           <h2>Pages</h2>
-          <Link to="/" className={props.activeHome + " routelink routelinkk"}>Home</Link>
-          <Link to="/about_us" className={props.activeHome + " routelink routelinkk"}>About Us</Link>
-          <Link to="/services" className={props.activeHome + " routelink routelinkk"}>Services</Link>
-          <Link to="/book_now" className={props.activeHome + " routelink routelinkk"}>Book Now</Link>
+          <div className="footerRoute">
+            <Link to="/" className={props.activeHome + " routelink routelinkk"}>Home</Link>
+            <Link to="/about_us" className={props.activeHome + " routelink routelinkk"}>About Us</Link>
+            <Link to="/services" className={props.activeHome + " routelink routelinkk"}>Services</Link>
+            <Link to="/book_now" className={props.activeHome + " routelink routelinkk"}>Book Now</Link>
+          </div>
         </div>
         <div className="contact-info">
           <h2>Contact Info</h2>
           <div className="mail">
             <FontAwesomeIcon icon={faPhone} />
             <p>+20 11 2416 6303</p>
-            </div>
+          </div>
           <div className="mail">
             <FontAwesomeIcon icon={faEnvelope} />
             <a target="_blank" href="#" className="email">mostafadeif11@gmail.com</a>
