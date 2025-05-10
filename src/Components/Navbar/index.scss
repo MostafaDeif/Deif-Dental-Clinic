@@ -18,7 +18,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   background-color: rgb(35, 41, 165);
-  position: relative;
+  position: sticky;
+  top: 0;
   height: 70px;
 }
 
