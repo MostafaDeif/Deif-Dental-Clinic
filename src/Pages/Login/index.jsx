@@ -11,6 +11,11 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
+  // Check if the user is already logged in on initial load
+  if (localStorage.getItem("userEmail")) {
+    navigate("/"); // Redirect to home if logged in
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -23,6 +28,10 @@ export default function Login() {
         timer: 1500,
         showConfirmButton: false
       });
+
+      // Store the user's email in localStorage
+      localStorage.setItem("userEmail", email);
+
       setTimeout(() => {
         navigate("/"); // Redirects to the home page
       }, 1500);

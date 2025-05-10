@@ -8,23 +8,13 @@ import "./index.scss";
 export default function Home() {
   return (
     <div className="col-12">
-      <div className="navcomp">
-        <Navbar activeHome="active"/>
-      </div>
-      <div>
-        <div>
-          <Landing />
-        </div>
-        <div>
-          <AboutSection />
-        </div>
-        <div>
-          <ServicesSection />
-        </div>
-        <div>
-          <Footer />
-        </div>
-      </div>
+      <Navbar activeHome="active" />
+      
+      <Landing />
+      <AboutSection />
+      <ServicesSection />
+
+      <Footer />
     </div>
   );
 }

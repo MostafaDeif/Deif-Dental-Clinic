@@ -15,6 +15,7 @@ import Services from "./Pages/Services";
 import About from "./Pages/About";
 import ScrollToTop from "./Components/ScrollToTop";
 import ProtectedRoute from "./Components/Portected";
+// import Navbar from "./Components/Navbar";
 // import PhoneEmailSignUp from "./Pages/PhoneSign";
 
 export default function App() {
@@ -24,12 +25,13 @@ export default function App() {
     const unsubscribe = auth.onAuthStateChanged(user => {
       setUser(user);
     });
-    return () => unsubscribe(); // Cleanup
+    return () => unsubscribe(); // Cleanup 
   }, []);
 
   return (
     <div>
       <BrowserRouter>
+        {/* <Navbar /> */}
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />

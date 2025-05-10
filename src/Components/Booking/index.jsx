@@ -29,19 +29,20 @@ const Booking = () => {
         return day === 5 || day === 6;
     };
 
+    const fetchBookedSlots = async (date) => {
+        const q = query(collection(db, "Reservations"), where("date", "==", date));
+        const querySnapshot = await getDocs(q);
+        const booked = querySnapshot.docs.map((doc) => doc.data().time);//[2:00 , 4:00]
+        setBookedSlots(booked);
+    };
+
     useEffect(() => {
         if (formData.date) {
             fetchBookedSlots(formData.date);
         }
     }, [formData.date]);
 
-    const fetchBookedSlots = async (date) => {
-        const q = query(collection(db, "Reservations"), where("date", "==", date));
-        const querySnapshot = await getDocs(q);
-        const booked = querySnapshot.docs.map((doc) => doc.data().time);
-        setBookedSlots(booked);
-    };
-
+    //فن 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -50,23 +51,23 @@ const Booking = () => {
         e.preventDefault();
 
         if (isWeekend(formData.date)) {
-            toast.error(t("errorWeekend"));
+            toast.error(t("You Can't Book on Weekends"));
             return;
         }
 
         if (!/^01[0-9]{9}$/.test(formData.phone)) {
-            toast.error(t("errorPhone"));
+            toast.error(t("Phone number is wrong"));
             return;
         }
 
         const user = auth.currentUser;
         if (!user) {
-            toast.error(t("errorLogin"));
+            toast.error(t("You have to login first"));
             return;
         }
 
         if (bookedSlots.includes(formData.time)) {
-            toast.error(t("errorBooked"));
+            toast.error(t("Already Booked"));
             return;
         }
 
@@ -99,8 +100,6 @@ const Booking = () => {
 
     return (
         <div className="booking-container-all">
-
-
             <div className="map">
                 <div className="clinicHours">
                     <h3 id="Hours">{t("clinicHours")}</h3>
@@ -111,7 +110,6 @@ const Booking = () => {
                     <div className="session">
                         <span>{t("days.Friday")} - {t("days.Saturday")}</span> <span>{t("closed")}</span>
                     </div>
-                   
                 </div>
 
                 <iframe className="location"
@@ -141,7 +139,10 @@ const Booking = () => {
                     </div>
                     <div className="inputSell">
                         <label htmlFor="phone">{t("phone")} *</label>
-                        <input type="tel" name="phone" id="phone" placeholder={t("placeholderPhone")} value={formData.phone} onChange={handleChange} required />
+                        <input type="tel" name="phone" id="phone" title="Enter a valid Egyptian phone number starting with 010, 011, 012, or 015"
+                            pattern="01[0125][0-9]{8}"
+                            maxLength="11"
+                            placeholder={t("placeholderPhone")} value={formData.phone} onChange={handleChange} required />
                     </div>
                     <div className="inputSell">
                         <label htmlFor="email">{t("email")}</label>

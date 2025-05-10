@@ -5,16 +5,12 @@ import "./index.scss"
 
 export default function BookNow() {
     return (
-        <div className="col-12 d-flex flex-column">
-            <div className="navcomp">
-                <Navbar activeBook="active" />
-            </div>
-            <div>
-                <Booking />
-            </div>
-            <div>
-                <Footer />
-            </div>
+        <div>
+            <Navbar activeBook="active" />
+
+            <Booking />
+
+            <Footer />
         </div>
     )
 }

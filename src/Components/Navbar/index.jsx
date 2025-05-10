@@ -6,7 +6,7 @@ import { useEffect, useState, useRef } from "react";
 import { auth, db } from "../../Firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
-
+import logo from "../../assets/logo/Vector.png"
 
 export default function Navbar(props) {
   const [userlog, setUserLog] = useState(null);
@@ -64,6 +64,8 @@ export default function Navbar(props) {
       <a href="#" className="linklogo">
         <div className="logo">
           <FontAwesomeIcon icon={faTooth} className="toothLogo" />
+          {/* <img src={logo} width={30} alt="check" /> */}
+
           <h1>Deif Dental Clinic</h1>
         </div>
       </a>

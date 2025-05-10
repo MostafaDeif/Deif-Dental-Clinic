@@ -13,7 +13,7 @@ imageData.sort((a, b) => {
   return getNumber(a) - getNumber(b);
 });
 
-const KidsSlider = () => {
+const CertificateSlider = () => {
   const settings = {
     dots: true,
     arrows: false,
@@ -35,8 +35,6 @@ const KidsSlider = () => {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          dots: false,
-
         },
       },
     ],
@@ -56,4 +54,4 @@ const KidsSlider = () => {
   );
 };
 
-export default KidsSlider;
+export default CertificateSlider;

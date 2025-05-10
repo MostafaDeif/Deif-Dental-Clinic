@@ -11,13 +11,10 @@ export default function Footer(props) {
         <div className="dental-info">
           <h1>Deif Dental Clinic</h1>
           <p>
-            Quality dental care for a healthy, bright smile. Book now!
+            Quality dental care for a healthy, bright smile. <Link to="/book_now" style={{ display: "inline" }} className={props.activeHome + " routelink routelinkk"}>Book Now</Link>
           </p>
           <div className="social-icons">
             <a target="_blank" href="https://www.facebook.com/DrMohamedDeif"><FontAwesomeIcon icon={faFacebook} /></a>
-            <a target="_blank" href="#"><FontAwesomeIcon icon={faSquareInstagram} /></a>
-
-
           </div>
         </div>
         <div className="pages">
@@ -33,7 +30,7 @@ export default function Footer(props) {
           <h2>Contact Info</h2>
           <div className="mail">
             <FontAwesomeIcon icon={faPhone} />
-            <p>+20 11 2416 6303</p>
+            <p>+20 11 5373 7291</p>
           </div>
           <div className="mail">
             <FontAwesomeIcon icon={faEnvelope} />

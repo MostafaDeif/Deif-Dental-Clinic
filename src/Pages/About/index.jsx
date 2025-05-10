@@ -7,18 +7,12 @@ import KidsSlider from '../../Components/KidsSlider'
 export default function About() {
     return (
         <div>
-            <div>
-                <Navbar activeAbout="active"/>
-            </div>
-            <div>
-                <KidsSlider/>
-            </div>
-            <div>
-                <BeforeAfterSlider />
-            </div>
-            <div>
-               <Footer/> 
-            </div>
-        </div>
+            <Navbar activeAbout="active" />
+
+            <BeforeAfterSlider />
+            <KidsSlider />
+
+            <Footer />
+        </div >
     )
 }

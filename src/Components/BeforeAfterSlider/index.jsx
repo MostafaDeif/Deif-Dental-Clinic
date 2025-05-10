@@ -2,27 +2,54 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./index.scss";
-import Mohamed1 from "../../assets/before/one.jpg";
-import Mohamed2 from "../../assets/before/three.jpg";
-import Mohamed3 from "../../assets/before/two.jpg";
+import af1 from "../../assets/after/af1.jpg";
+import f1a from "../../assets/after/f1.jpg";
+import f2a from "../../assets/after/f2.jpg";
+import wh1a from "../../assets/after/wh1.jpg";
+import smo1a from "../../assets/after/smo1.jpg";
+import wh1b from "../../assets/before/wh1.jpg";
+import f1b from "../../assets/before/f1.jpg";
+import f2b from "../../assets/before/f2.jpg";
+import smo1b from "../../assets/before/smo1.jpg";
+import bf1 from "../../assets/before/bf1.jpg";
+import beforebraces from "../../assets/before/1braces.jpg";
+import afterbraces from "../../assets/after/1braces.jpg";
 const surgeryData = [
   {
     id: 1,
-    beforeImg: Mohamed1,
-    afterImg: Mohamed2,
+    beforeImg: bf1,
+    afterImg: af1,
     description: "Teeth Whitening",
   },
   {
     id: 2,
-    beforeImg: Mohamed3,
-    afterImg: Mohamed2,
+    beforeImg: beforebraces,
+    afterImg: afterbraces,
     description: "Braces Alignment",
   },
   {
-    id: 3,
-    beforeImg: Mohamed1,
-    afterImg: Mohamed3,
+    id: 4,
+    beforeImg: smo1b,
+    afterImg: smo1a,
     description: "Smile Makeover",
+  },
+  {
+    id: 5,
+    beforeImg: f1b,
+    afterImg: f1a,
+    description: "Filling",
+  },
+  {
+    id: 5,
+    beforeImg: f2b,
+    afterImg: f2a,
+    description: "Filling",
+  },
+  {
+    id: 6,
+    beforeImg: wh1b,
+    afterImg: wh1a,
+    description: "Teeth Whitening",
   },
 ];
 
@@ -35,7 +62,7 @@ const CustomSlider = () => {
     slidesToShow: 1,         // Only show 1 slide at a time
     slidesToScroll: 1,       // Scroll 1 slide at a time
     autoplay: true,          // Enable auto sliding
-    autoplaySpeed: 2500,     // Speed of auto sliding
+    autoplaySpeed: 2000,     // Speed of auto sliding
     arrows: false,           // Remove arrows from the slider
     pauseOnHover: true,      // Pause auto sliding when hover
   };

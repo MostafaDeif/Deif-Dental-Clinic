@@ -8,6 +8,8 @@ import Navbar from "../../Components/Navbar";
 const Admin = () => {
     const [bookings, setBookings] = useState([]);
 
+    const [deletedBooking, setDeletedBooking] = useState(null); //track  id
+
     useEffect(() => {
         fetchBookings();
     }, []);
@@ -15,7 +17,8 @@ const Admin = () => {
     const getDayName = (dateString) => {
         const date = new Date(dateString);
         return date.toLocaleDateString("en-US", { weekday: "long" });
-      };
+    };
+
     const fetchBookings = async () => {
         try {
             const querySnapshot = await getDocs(collection(db, "Reservations"));
@@ -36,11 +39,38 @@ const Admin = () => {
         try {
             await deleteDoc(doc(db, "Reservations", id));
             setBookings(bookings.filter((booking) => booking.id !== id));
-            toast.success("Booking deleted successfully!");
+            setDeletedBooking(id);
+
+            const toastId = toast.success(
+                <div>
+                    Booking deleted successfully!
+                    <button className="undo"
+                        onClick={() => undoDelete(id, toastId)}
+                        style={{ marginLeft: "10px" }}
+                    >
+                        Undo
+                    </button>
+                </div>,
+                { autoClose: 5000 }
+            );
+
+            // Automatically dismiss the toast after 5 seconds
+            // setTimeout(() => {
+            //     if (toastId) toast.dismiss(toastId);
+            // }, 5000);
         } catch (error) {
             console.error("Error deleting booking:", error);
             toast.error("Error deleting booking. Please try again.");
         }
+    };
+
+    const undoDelete = (id, toastId) => {
+        setBookings((prevBookings) => [
+            ...prevBookings,
+            bookings.find((booking) => booking.id === id),
+        ]);
+        toast.dismiss(toastId);
+        setDeletedBooking(null);
     };
 
     return (
