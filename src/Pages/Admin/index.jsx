@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { db, collection, getDocs, deleteDoc, doc } from "../../Firebase";
+import { db, collection, getDocs, deleteDoc, doc, setDoc } from "../../Firebase";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./index.scss";
 import Navbar from "../../Components/Navbar";
 
 const Admin = () => {
-    const [bookings, setBookings] = useState([]);
-
-    const [deletedBooking, setDeletedBooking] = useState(null); //track  id
+    const [bookings, setBookings] = useState([]); //my data
+    const [deletedBooking, setDeletedBooking] = useState(null); // track deleted booking
 
     useEffect(() => {
         fetchBookings();
     }, []);
-    
+
     const getDayName = (dateString) => {
         const date = new Date(dateString);
         return date.toLocaleDateString("en-US", { weekday: "long" });
@@ -36,16 +35,18 @@ const Admin = () => {
     };
 
     const deleteBooking = async (id) => {
+        const deleted = bookings.find((booking) => booking.id === id);
         try {
             await deleteDoc(doc(db, "Reservations", id));
             setBookings(bookings.filter((booking) => booking.id !== id));
-            setDeletedBooking(id);
+            setDeletedBooking(deleted); // Save full data
 
             const toastId = toast.success(
                 <div>
                     Booking deleted successfully!
-                    <button className="undo"
-                        onClick={() => undoDelete(id, toastId)}
+                    <button
+                        className="undo"
+                        onClick={() => undoDelete(deleted, toastId)}
                         style={{ marginLeft: "10px" }}
                     >
                         Undo
@@ -53,24 +54,31 @@ const Admin = () => {
                 </div>,
                 { autoClose: 5000 }
             );
-
-            // Automatically dismiss the toast after 5 seconds
-            // setTimeout(() => {
-            //     if (toastId) toast.dismiss(toastId);
-            // }, 5000);
         } catch (error) {
             console.error("Error deleting booking:", error);
             toast.error("Error deleting booking. Please try again.");
         }
     };
 
-    const undoDelete = (id, toastId) => {
-        setBookings((prevBookings) => [
-            ...prevBookings,
-            bookings.find((booking) => booking.id === id),
-        ]);
-        toast.dismiss(toastId);
-        setDeletedBooking(null);
+    const undoDelete = async (booking, toastId) => {
+        try {
+            await setDoc(doc(db, "Reservations", booking.id), {
+                name: booking.name,
+                phone: booking.phone,
+                email: booking.email,
+                service: booking.service,
+                date: booking.date,
+                time: booking.time,
+                message: booking.message
+            });
+
+            setBookings((prev) => [...prev, booking]);
+            toast.dismiss(toastId);
+            setDeletedBooking(null);
+        } catch (error) {
+            console.error("Error undoing delete:", error);
+            toast.error("Error restoring booking. Please try again.");
+        }
     };
 
     return (
