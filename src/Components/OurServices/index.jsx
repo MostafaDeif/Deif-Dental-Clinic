@@ -146,7 +146,7 @@ export default function ServicesSection() {
       <div className="cardss">
         <Slider {...settings}>
           {services.map((service, index) => (
-            <div key={index} className="slider-card">
+            <div key={index} className="slider-card" >
               <Card
                 head={service.head}
                 img={service.img}

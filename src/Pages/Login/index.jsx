@@ -9,12 +9,6 @@ import Swal from "sweetalert2";
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
-
-  // Check if the user is already logged in on initial load
-  if (localStorage.getItem("userEmail")) {
-    navigate("/"); // Redirect to home if logged in
-  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,12 +23,7 @@ export default function Login() {
         showConfirmButton: false
       });
 
-      // Store the user's email in localStorage
-      localStorage.setItem("userEmail", email);
-
-      setTimeout(() => {
-        navigate("/"); // Redirects to the home page
-      }, 1500);
+    
 
     } catch (err) {
       console.log(err);
@@ -85,7 +74,7 @@ export default function Login() {
             />
             <div>
               <input className="signbtn" type="submit" value="Login" />
-              <span></span>
+              {/* <span></span> */}
             </div>
           </form>
         </div>
